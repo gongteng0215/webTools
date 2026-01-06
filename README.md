@@ -4,6 +4,18 @@ An integrated, minimalist, high-density online toolbox for modern developers, bu
 
 [中文文档 (Chinese Documentation)](./README_zh.md)
 
+## 📸 Screenshots
+
+![Main Dashboard](./screenshots/dashboard_main.png)
+*Modern minimalist dashboard with 16 utilities.*
+
+````carousel
+![Crypto Tool](./screenshots/crypto_tool.png)
+<!-- slide -->
+![Regex Tester](./screenshots/regex_tester.png)
+````
+*Interactive and real-time response interface.*
+
 ## 🚀 Core Features
 
 - **16-in-1 Versatile Toolbox**: Covers encryption/decryption, configuration conversion, network requests, UI design, and more.
