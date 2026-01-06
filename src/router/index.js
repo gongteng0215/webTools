@@ -16,6 +16,8 @@ import SqlFormatter from '../views/SqlFormatter.vue'
 import UnitConverter from '../views/UnitConverter.vue'
 import UrlParser from '../views/UrlParser.vue'
 import QrCodeGenerator from '../views/QrCodeGenerator.vue'
+import MarkdownPreview from '../views/MarkdownPreview.vue'
+import UAParser from '../views/UAParser.vue'
 
 const routes = [
     { path: '/', component: HomeView },
@@ -34,7 +36,9 @@ const routes = [
     { path: '/sql-format', component: SqlFormatter },
     { path: '/unit-convert', component: UnitConverter },
     { path: '/url-parse', component: UrlParser },
-    { path: '/qrcode', component: QrCodeGenerator }
+    { path: '/qrcode', component: QrCodeGenerator },
+    { path: '/markdown', component: MarkdownPreview },
+    { path: '/ua', component: UAParser }
 ]
 
 const router = createRouter({

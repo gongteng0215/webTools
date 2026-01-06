@@ -62,17 +62,17 @@ watch([sqlInput, dialect, isUppercase, indent], formatSql, { immediate: true })
         </div>
 
         <div class="cfg-item">
-          <label>{{ t('home.tools.password.length') }}</label>
+          <label>{{ t('home.tools.sql.indent') }}</label>
           <select v-model.number="indent">
-            <option :value="2">2 {{ t('home.tools.password.bits', { n: '' }).replace('位密码', '') }}空格</option>
-            <option :value="4">4 {{ t('home.tools.password.bits', { n: '' }).replace('位密码', '') }}空格</option>
+            <option :value="2">2 {{ t('home.tools.password.bits', { n: '' }).replace('位密码', '').replace('bits', '') }} Spacing</option>
+            <option :value="4">4 {{ t('home.tools.password.bits', { n: '' }).replace('位密码', '').replace('bits', '') }} Spacing</option>
             <option :value="1">1 Tab</option>
           </select>
         </div>
 
         <div class="cfg-item">
           <label class="checkbox-label">
-            <input type="checkbox" v-model="isUppercase"> {{ t('home.tools.strings.case.upper') }}
+            <input type="checkbox" v-model="isUppercase"> {{ t('home.tools.sql.uppercase') }}
           </label>
         </div>
       </div>

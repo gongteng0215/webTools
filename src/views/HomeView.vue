@@ -3,6 +3,7 @@
     <header class="hero">
       <h1 class="gradient-title">{{ $t('home.title') }}</h1>
       <p class="subtitle">{{ $t('home.subtitle') }}</p>
+      <p class="full-description">{{ $t('home.description') }}</p>
     </header>
     
     <div class="tool-grid">
@@ -197,19 +198,47 @@
         <h3>{{ $t('home.tools.qrcode.title') }}</h3>
         <p>{{ $t('home.tools.qrcode.desc') }}</p>
       </router-link>
+
+      <router-link to="/markdown" class="tool-card">
+        <div class="icon-wrapper dark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+          </svg>
+        </div>
+        <h3>{{ $t('home.tools.markdown.title') }}</h3>
+        <p>{{ $t('home.tools.markdown.desc') }}</p>
+      </router-link>
+
+      <router-link to="/ua" class="tool-card">
+        <div class="icon-wrapper red">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <h3>{{ $t('home.tools.ua.title') }}</h3>
+        <p>{{ $t('home.tools.ua.desc') }}</p>
+      </router-link>
     </div>
   </div>
 </template>
 
 <style scoped>
-.home-container {
-  text-align: center;
+.dashboard {
   padding: 30px 20px;
 }
 
-.main-title {
+.hero {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.gradient-title {
   font-size: 2.2rem;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   background: linear-gradient(45deg, #7c4dff, #4caf50);
   background-clip: text;
   -webkit-background-clip: text;
@@ -218,8 +247,17 @@
 
 .subtitle {
   color: #666;
-  font-size: 1rem;
-  margin-bottom: 40px;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.full-description {
+  color: #95a5a6;
+  font-size: 0.9rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
 }
 
 .tool-grid {

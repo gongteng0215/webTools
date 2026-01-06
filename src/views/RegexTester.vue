@@ -10,10 +10,10 @@ const testText = ref('My emails are test@example.com and dev.ops-123@google.co.u
 const error = ref('')
 
 const commonRegex = computed(() => [
-  { name: t('regex.templates.email'), val: '([a-z0-9_.-]+)@([a-z0-9.-]+)\\.([a-z.]{2,6})', flags: 'g' },
-  { name: t('regex.templates.phone'), val: '1[3-9]\\d{9}', flags: 'g' },
-  { name: t('regex.templates.ip'), val: '((2(5[0-5]|[0-4]\\d))|[0-1]?\\d{1,2})(\\.((2(5[0-5]|[0-4]\\d))|[0-1]?\\d{1,2})){3}', flags: 'g' },
-  { name: t('regex.templates.url'), val: 'https?://[\\w.-]+(?:\\.[\\w.-]+)+[\\w\\-_~:/?#[\\]@!$&\'()*+,;=.]+', flags: 'g' }
+  { name: t('home.tools.regex.templates.email'), val: '([a-z0-9_.-]+)@([a-z0-9.-]+)\\.([a-z.]{2,6})', flags: 'g' },
+  { name: t('home.tools.regex.templates.phone'), val: '1[3-9]\\d{9}', flags: 'g' },
+  { name: t('home.tools.regex.templates.ip'), val: '((2(5[0-5]|[0-4]\\d))|[0-1]?\\d{1,2})(\\.((2(5[0-5]|[0-4]\\d))|[0-1]?\\d{1,2})){3}', flags: 'g' },
+  { name: t('home.tools.regex.templates.url'), val: 'https?://[\\w.-]+(?:\\.[\\w.-]+)+[\\w\\-_~:/?#[\\]@!$&\'()*+,;=.]+', flags: 'g' }
 ])
 
 const highlightedText = computed(() => {
@@ -76,7 +76,7 @@ const applyTemplate = (tpl) => {
       </div>
 
       <div class="templates">
-        <span class="label">{{ t('regex.templates.email') }}:</span>
+        <span class="label">{{ t('home.tools.regex.templates.email') }}:</span>
         <button v-for="tpl in commonRegex" :key="tpl.name" @click="applyTemplate(tpl)" class="btn-tpl">
           {{ tpl.name }}
         </button>
@@ -84,11 +84,11 @@ const applyTemplate = (tpl) => {
 
       <div class="test-area">
         <div class="pane">
-          <label>{{ t('regex.text') }}</label>
-          <textarea v-model="testText" :placeholder="t('regex.text') + '...'" spellcheck="false"></textarea>
+          <label>{{ t('home.tools.regex.text') }}</label>
+          <textarea v-model="testText" :placeholder="t('home.tools.regex.text') + '...'" spellcheck="false"></textarea>
         </div>
         <div class="pane preview-pane">
-          <label>{{ t('regex.result') }}</label>
+          <label>{{ t('home.tools.regex.result') }}</label>
           <div class="highlight-box" v-html="highlightedText"></div>
         </div>
       </div>

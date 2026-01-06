@@ -21,10 +21,10 @@ const privateKey = ref('')
 const rsaBits = ref(2048)
 
 const algorithms = computed(() => [
-  { label: t('crypto.hash'), options: ['MD5', 'SHA1', 'SHA256', 'SHA512'] },
-  { label: t('crypto.symmetric'), options: ['AES', 'DES'] },
-  { label: t('crypto.asymmetric'), options: ['RSA', 'Ed25519'] },
-  { label: t('crypto.encoding'), options: ['Base64', 'URL'] }
+  { label: t('home.tools.crypto.hash'), options: ['MD5', 'SHA1', 'SHA256', 'SHA512'] },
+  { label: t('home.tools.crypto.symmetric'), options: ['AES', 'DES'] },
+  { label: t('home.tools.crypto.asymmetric'), options: ['RSA', 'Ed25519'] },
+  { label: t('home.tools.crypto.encoding'), options: ['Base64', 'URL'] }
 ])
 
 const processCrypto = () => {
@@ -76,12 +76,12 @@ const processCrypto = () => {
     } else if (currentAlgo === 'RSA') {
       const encryptor = new JSEncrypt()
       if (mode.value === 'encrypt') {
-        if (!publicKey.value) throw new Error(t('crypto.publicKey') + ' required')
+        if (!publicKey.value) throw new Error(t('home.tools.crypto.publicKey') + ' required')
         encryptor.setPublicKey(publicKey.value)
         result = encryptor.encrypt(inputText.value)
         if (!result) throw new Error('Encryption failed')
       } else {
-        if (!privateKey.value) throw new Error(t('crypto.privateKey') + ' required')
+        if (!privateKey.value) throw new Error(t('home.tools.crypto.privateKey') + ' required')
         encryptor.setPrivateKey(privateKey.value)
         result = encryptor.decrypt(inputText.value)
         if (!result) throw new Error('Decryption failed')
@@ -154,8 +154,8 @@ const canDecrypt = () => ['AES', 'DES', 'Base64', 'URL', 'RSA'].includes(algorit
           </select>
 
           <div v-if="canDecrypt()" class="mode-switch">
-            <button @click="mode = 'encrypt'" :class="{ active: mode === 'encrypt' }">{{ t('crypto.encrypt') }}</button>
-            <button @click="mode = 'decrypt'" :class="{ active: mode === 'decrypt' }">{{ t('crypto.decrypt') }}</button>
+            <button @click="mode = 'encrypt'" :class="{ active: mode === 'encrypt' }">{{ t('home.tools.crypto.encrypt') }}</button>
+            <button @click="mode = 'decrypt'" :class="{ active: mode === 'decrypt' }">{{ t('home.tools.crypto.decrypt') }}</button>
           </div>
 
           <button @click="clearAll" class="btn-clear">{{ t('common.clear') }}</button>
@@ -165,18 +165,18 @@ const canDecrypt = () => ['AES', 'DES', 'Base64', 'URL', 'RSA'].includes(algorit
 
       <div v-if="isSymmetric()" class="config-bar">
         <div class="config-item">
-          <label>{{ t('crypto.key') }}:</label>
-          <input type="text" v-model="secretKey" :placeholder="t('crypto.key') + '...'">
+          <label>{{ t('home.tools.crypto.key') }}:</label>
+          <input type="text" v-model="secretKey" :placeholder="t('home.tools.crypto.key') + '...'">
         </div>
         <div class="config-item">
-          <label>{{ t('crypto.iv') }}:</label>
-          <input type="text" v-model="iv" :placeholder="t('crypto.iv') + ' (16 chars)...'">
+          <label>{{ t('home.tools.crypto.iv') }}:</label>
+          <input type="text" v-model="iv" :placeholder="t('home.tools.crypto.iv') + ' (16 chars)...'">
         </div>
       </div>
 
       <div v-if="isAsymmetric()" class="config-bar rsa-config">
         <div class="config-item rsa-options" v-if="algorithm === 'RSA'">
-          <label>{{ t('crypto.bitSize') }}:</label>
+          <label>{{ t('home.tools.crypto.bitSize') }}:</label>
           <select v-model="rsaBits" class="select-bits">
             <option :value="1024">1024</option>
             <option :value="2048">2048</option>
@@ -184,15 +184,15 @@ const canDecrypt = () => ['AES', 'DES', 'Base64', 'URL', 'RSA'].includes(algorit
           </select>
         </div>
         <div class="config-item full-width">
-          <label>{{ t('crypto.publicKey') }}:</label>
-          <textarea v-model="publicKey" :placeholder="t('crypto.publicKey') + '...'"></textarea>
+          <label>{{ t('home.tools.crypto.publicKey') }}:</label>
+          <textarea v-model="publicKey" :placeholder="t('home.tools.crypto.publicKey') + '...'"></textarea>
         </div>
         <div class="config-item full-width">
-          <label>{{ t('crypto.privateKey') }}:</label>
-          <textarea v-model="privateKey" :placeholder="t('crypto.privateKey') + '...'"></textarea>
+          <label>{{ t('home.tools.crypto.privateKey') }}:</label>
+          <textarea v-model="privateKey" :placeholder="t('home.tools.crypto.privateKey') + '...'"></textarea>
         </div>
         <div class="config-actions">
-          <button @click="generateKeys" class="btn-gen-keys">{{ t('crypto.generateKeys') }}</button>
+          <button @click="generateKeys" class="btn-gen-keys">{{ t('home.tools.crypto.generateKeys') }}</button>
         </div>
       </div>
 
@@ -211,7 +211,7 @@ const canDecrypt = () => ['AES', 'DES', 'Base64', 'URL', 'RSA'].includes(algorit
 </template>
 
 <style scoped>
-.view-container { width: 100%; max-width: 1200px; }
+.view-container { width: 100%; max-width: 1200px; margin: 0 auto; }
 .back-nav { margin-bottom: 20px; }
 .btn-back { text-decoration: none; color: #ff7675; font-weight: bold; }
 

@@ -217,7 +217,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.view-container { width: 100%; max-width: 1200px; height: 85vh; display: flex; flex-direction: column; }
+.view-container { width: 100%; max-width: 1200px; height: 85vh; display: flex; flex-direction: column; margin: 0 auto; }
 .back-nav { margin-bottom: 20px; }
 .btn-back { text-decoration: none; color: #3498db; font-weight: bold; }
 .jwt-card { background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); flex: 1; display: flex; flex-direction: column; overflow: hidden; border: 1px solid #eee; }

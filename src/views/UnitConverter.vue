@@ -76,7 +76,7 @@ const updateFromRem = () => {
         <div class="root-setup">
           <label>{{ t('home.tools.unit.basePx') }}:</label>
           <input type="number" v-model.number="screenParams.rootSize" @input="updateFromPixel">
-          <p class="hint">{{ t('home.tools.unit.desc').split('与')[1] ? ' обычно 16px' : '通常浏览器默认为 16px' }}</p>
+          <p class="hint">{{ t('home.tools.unit.hint') }}</p>
         </div>
         
         <div class="divider"></div>

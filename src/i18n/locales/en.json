@@ -12,11 +12,13 @@
         "error": "Error",
         "description": "Description",
         "settings": "Settings",
-        "action": "Action"
+        "action": "Action",
+        "at": "at"
     },
     "home": {
         "title": "WebTools Dashboard",
-        "subtitle": "High-density, minimalist developer toolbox",
+        "subtitle": "A high-density, minimalist, and integrated toolbox for modern developers.",
+        "description": "All-in-one web utilities designed for productivity. No tab switching, no data collection—all computations are performed locally in your browser for maximum privacy and speed.",
         "tools": {
             "password": {
                 "title": "Password Generator",
@@ -24,16 +26,68 @@
             },
             "cron": {
                 "title": "Cron Generator",
-                "desc": "Visual cron editing with humanized description and prediction."
+                "desc": "Visual cron editing with humanized description and prediction.",
+                "inputLabel": "Cron Expression",
+                "humanDescription": "Human Readable Description",
+                "nextExecution": "Next Execution Time",
+                "next": "next",
+                "upcomingRuns": "Upcoming Executions (Next 7)",
+                "randomBtn": "Random Code",
+                "placeholder": "e.g.: * * * * *",
+                "invalid": "Invalid Cron Expression",
+                "fields": {
+                    "minute": "Minute",
+                    "hour": "Hour",
+                    "day": "Day",
+                    "month": "Month",
+                    "weekday": "Weekday"
+                },
+                "syntax": {
+                    "any": "any value",
+                    "list": "value list separator",
+                    "range": "range of values",
+                    "step": "step values"
+                }
             },
             "json": {
-                "title": "JSON Formatter",
-                "desc": "Beautify, compress, and escape JSON data.",
-                "format": "Beautify",
-                "compress": "Compress",
-                "escape": "Escape",
-                "unescape": "Unescape",
-                "placeholder": "Paste JSON here..."
+                "title": "JSON & CSV Lab",
+                "description": "Beautify, compress, escape JSON, and convert between JSON and CSV.",
+                "placeholder": "Enter JSON or CSV data here...",
+                "format": "Format JSON",
+                "compress": "Compress JSON",
+                "escape": "Escape JSON",
+                "unescape": "Unescape JSON",
+                "jsonToCsv": "JSON to CSV",
+                "csvToJson": "CSV to JSON",
+                "source": "Source Format",
+                "target": "Target Format",
+                "compress": "Compress Output (Minify)",
+                "formats": {
+                    "json": "JSON",
+                    "csv": "CSV",
+                    "text": "Text",
+                    "escaped": "Escaped String"
+                }
+            },
+            "markdown": {
+                "title": "Markdown Pro",
+                "description": "Real-time split-screen Markdown editor with GitHub styling.",
+                "placeholder": "Enter Markdown text here...",
+                "preview": "Preview"
+            },
+            "ua": {
+                "title": "UA Parser",
+                "description": "Analyze User Agent strings for browser and device info.",
+                "placeholder": "Enter User Agent string here...",
+                "parse": "Parse UA",
+                "current": "Use Current Browser UA",
+                "results": {
+                    "browser": "Browser",
+                    "os": "OS",
+                    "device": "Device",
+                    "engine": "Engine",
+                    "cpu": "CPU"
+                }
             },
             "crypto": {
                 "title": "Crypto Tools",
@@ -163,7 +217,9 @@
             "sql": {
                 "title": "SQL Formatter",
                 "desc": "Beautify SQL statements with support for multiple dialects.",
-                "dialect": "SQL Dialect"
+                "dialect": "SQL Dialect",
+                "indent": "Indent Size",
+                "uppercase": "Uppercase Keywords"
             },
             "unit": {
                 "title": "Unit Lab",
@@ -171,7 +227,8 @@
                 "storage": "Storage Capacity",
                 "css": "CSS Sizing",
                 "reset": "Reset",
-                "basePx": "Base Font Size (px)"
+                "basePx": "Base Font Size (px)",
+                "hint": "Usually 16px by default in browsers"
             },
             "url": {
                 "title": "URL Parser",
@@ -181,7 +238,8 @@
                 "query": "Query Parameters",
                 "key": "Key",
                 "val": "Value",
-                "add": "Add Parameter"
+                "add": "Add Parameter",
+                "noParams": "No query parameters"
             },
             "qrcode": {
                 "title": "QR Code Generator",

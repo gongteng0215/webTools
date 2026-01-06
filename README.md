@@ -15,7 +15,7 @@ An integrated, minimalist, high-density online toolbox for modern developers, bu
 
 ## 🚀 Core Features
 
-- **16-in-1 Versatile Toolbox**: Covers encryption/decryption, configuration conversion, network requests, UI design, and more.
+- **18-in-1 Versatile Toolbox**: Covers encryption/decryption, configuration conversion, network requests, UI design, and more.
 - **Real-time Response**: Almost all tools support instant "input-to-output" feedback.
 - **High-density Dashboard**: Minimalist "control panel" layout for quick tool access and reduced scrolling.
 - **Spring Boot Friendly**: Special support for deep conversion between `.properties` and `YAML`.
@@ -30,6 +30,7 @@ An integrated, minimalist, high-density online toolbox for modern developers, bu
 3. **JSON Formatter**: Supports beautification, compression, escaping, and tree folding.
 4. **All-in-One Crypto Tool**: Integrated AES, DES, MD5, SHA (1/256/512), Base64, and URL encoding.
 5. **JWT Debugger**: Supports parsing and generation of JWS (Signing) and JWE (Encryption).
+6. **JSON & CSV Lab**: Beautify, compress, and escape JSON. Now supports high-performance bidirectional conversion between JSON and CSV.
 
 ### 🧩 Helper Tools
 6. **Timestamp Converter**: Bidirectional conversion between seconds/milliseconds and dates with a live clock.
@@ -45,6 +46,8 @@ An integrated, minimalist, high-density online toolbox for modern developers, bu
 14. **Unit Lab**: Ultra-fast conversion between Storage Capacity (B to TB) and CSS units (px/rem).
 15. **URL Parser**: Deeply deconstruct URL components with visual table editing for query parameters.
 16. **QR Code Assistant**: Instant text or link conversion to QR codes with custom sizing and download.
+17. **Markdown Pro**: Real-time split-screen Markdown editor with GitHub-flavored preview.
+18. **User Agent Parser**: Deeply analyze UA strings to identify browser, engine, OS, and device type.
 
 ## 💻 Tech Stack
 

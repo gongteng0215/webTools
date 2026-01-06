@@ -111,7 +111,7 @@ watch(urlInput, parseUrl, { immediate: true })
             <input v-model="p.value" @input="updateUrl" :placeholder="t('home.tools.url.val')" spellcheck="false">
             <button @click="removeParam(index)" class="btn-remove">×</button>
           </div>
-          <div v-if="queryParams.length === 0" class="empty-hint">{{ t('home.tools.regex.noMatch') }}</div>
+          <div v-if="queryParams.length === 0" class="empty-hint">{{ t('home.tools.url.noParams') }}</div>
         </div>
       </div>
     </div>

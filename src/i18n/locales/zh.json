@@ -12,11 +12,13 @@
         "error": "错误",
         "description": "说明",
         "settings": "设置",
-        "action": "操作"
+        "action": "操作",
+        "at": "于"
     },
     "home": {
         "title": "Web 实用工具箱",
-        "subtitle": "极简高密度的全能开发工具生态",
+        "subtitle": "专为现代开发者打造的高密度、极简集成式在线工具箱。",
+        "description": "集 18 款常用开发辅助功能于一体，拒绝反复切换标签页。所有计算均在浏览器本地完成，数据不上传服务器，保障您的数据隐私与极致的响应速度。",
         "tools": {
             "password": {
                 "title": "随机密码",
@@ -50,7 +52,8 @@
                 "inputLabel": "Cron 表达式",
                 "humanDescription": "人类可读描述",
                 "nextExecution": "下次执行时间",
-                "upcomingRuns": "未来执行列表 (最近 7 天)",
+                "next": "下次",
+                "upcomingRuns": "接下来的 7 次执行时间",
                 "randomBtn": "随机生成",
                 "placeholder": "例如：* * * * *",
                 "invalid": "无效的 Cron 表达式",
@@ -60,16 +63,52 @@
                     "day": "日",
                     "month": "月",
                     "weekday": "周"
+                },
+                "syntax": {
+                    "any": "任意值",
+                    "list": "列表分隔符",
+                    "range": "数值范围",
+                    "step": "步进值"
                 }
             },
             "json": {
-                "title": "JSON 格式化",
-                "desc": "JSON 数据高亮美化、压缩及转义处理。",
-                "format": "整理美化",
-                "compress": "压缩在一行",
-                "escape": "转义字符串",
-                "unescape": "去转义",
-                "placeholder": "在此粘贴 JSON 内容..."
+                "title": "JSON & CSV 实验室",
+                "desc": "JSON 美化、压缩、转义，以及 JSON 与 CSV 格式互转。",
+                "format": "格式化 JSON",
+                "compress": "压缩输出 (Minify)",
+                "escape": "转义 JSON",
+                "unescape": "还原 JSON",
+                "jsonToCsv": "JSON 转 CSV",
+                "csvToJson": "CSV 转 JSON",
+                "source": "源格式",
+                "target": "目标格式",
+                "formats": {
+                    "json": "JSON",
+                    "csv": "CSV",
+                    "text": "纯文本",
+                    "escaped": "转义字符串"
+                },
+                "placeholder": "在此粘贴 JSON 或 CSV 内容..."
+            },
+            "markdown": {
+                "title": "Markdown 专业版",
+                "desc": "实时分屏 Markdown 编辑器，支持 GitHub 样式预览。",
+                "placeholder": "在此输入 Markdown 文本...",
+                "preview": "预览"
+            },
+            "ua": {
+                "title": "UA 解析器",
+                "desc": "解析 User Agent 字符串，获取浏览器和设备详细信息。",
+                "placeholder": "在此输入 User Agent 字符串...",
+                "parse": "解析 UA",
+                "current": "使用当前浏览器 UA",
+                "results": {
+                    "browser": "浏览器",
+                    "os": "操作系统",
+                    "device": "设备",
+                    "engine": "内核",
+                    "cpu": "架构"
+                }
             },
             "crypto": {
                 "title": "加密助手",
@@ -199,7 +238,9 @@
             "sql": {
                 "title": "SQL 格式化",
                 "desc": "美化 SQL 语句，支持多种主流数据库方言。",
-                "dialect": "SQL 方言"
+                "dialect": "SQL 方言",
+                "indent": "缩进长度",
+                "uppercase": "关键字大写"
             },
             "unit": {
                 "title": "单位实验室",
@@ -207,7 +248,8 @@
                 "storage": "存储容量换算",
                 "css": "CSS 尺寸换算",
                 "reset": "重置",
-                "basePx": "基础字号 (px)"
+                "basePx": "基础字号 (px)",
+                "hint": "通常浏览器默认为 16px"
             },
             "url": {
                 "title": "URL 解析器",
@@ -217,7 +259,8 @@
                 "query": "查询参数 (Query)",
                 "key": "键",
                 "val": "值",
-                "add": "添加参数"
+                "add": "添加参数",
+                "noParams": "暂无查询参数"
             },
             "qrcode": {
                 "title": "二维码生成",

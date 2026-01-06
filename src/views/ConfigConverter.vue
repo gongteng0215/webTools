@@ -82,30 +82,19 @@ const flatten = (obj, prefix, res) => {
 }
 
 const swap = () => {
-  const temp = sourceFormat.value
+  const tempFmt = sourceFormat.value
   sourceFormat.value = targetFormat.value
-  targetFormat.value = temp
-  input.value = output.value
-  convert()
+  targetFormat.value = tempFmt
+
+  // Only swap content if we have a valid output to swap back in
+  // Otherwise, we keep the input (user might just want to change direction to retry)
+  if (output.value && !error.value) {
+    input.value = output.value
+  }
 }
 
-const clearInput = () => {
-  input.value = ''
-  output.value = ''
-  error.value = ''
-}
+// ... existing code ...
 
-const copyOutput = () => {
-  if (!output.value) return
-  navigator.clipboard.writeText(output.value)
-  alert(t('common.copied'))
-}
-
-watch([input, sourceFormat, targetFormat], convert, { immediate: true })
-
-onMounted(() => {
-  convert()
-})
 </script>
 
 <template>
@@ -122,36 +111,38 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="format-controls">
-        <div class="control-group">
+      <div class="converter-bar">
+        <div class="select-wrapper">
           <label>{{ t('home.tools.config.source') }}</label>
-          <select v-model="sourceFormat">
-            <option value="yaml">YAML</option>
-            <option value="json">JSON</option>
-            <option value="properties">Properties</option>
-          </select>
+          <div class="select-box">
+             <select v-model="sourceFormat">
+              <option value="yaml">YAML</option>
+              <option value="json">JSON</option>
+              <option value="properties">Properties</option>
+            </select>
+          </div>
         </div>
         
-        <button @click="swap" class="btn-swap" :title="t('common.action')">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 1l4 4-4 4"></path>
-            <path d="M3 19l4 4 4-4"></path>
-            <path d="M21 5H3"></path>
-            <path d="M3 19h18"></path>
+        <button @click="swap" class="btn-swap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/>
           </svg>
         </button>
 
-        <div class="control-group">
+        <div class="select-wrapper">
           <label>{{ t('home.tools.config.target') }}</label>
-          <select v-model="targetFormat">
-            <option value="properties">Properties</option>
-            <option value="yaml">YAML</option>
-            <option value="json">JSON</option>
-          </select>
+           <div class="select-box">
+            <select v-model="targetFormat">
+              <option value="properties">Properties</option>
+              <option value="yaml">YAML</option>
+              <option value="json">JSON</option>
+            </select>
+          </div>
         </div>
       </div>
 
       <div class="editor-area">
+        <!-- ... existing panes ... -->
         <div class="pane">
           <div class="pane-header">
             <label>{{ t('common.input') }} ({{ sourceFormat.toUpperCase() }})</label>
@@ -162,7 +153,7 @@ onMounted(() => {
 
         <div class="pane">
           <div class="pane-header">
-            <label>{{ t('common.output') }} ({{ targetFormat.toUpperCase() }})</label>
+             <label>{{ t('common.output') }} ({{ targetFormat.toUpperCase() }})</label>
             <button v-if="output" @click="copyOutput" class="btn-copy-inline">{{ t('common.copy') }}</button>
           </div>
           <textarea v-model="output" readonly :placeholder="t('common.output') + '...'"></textarea>
@@ -181,25 +172,41 @@ onMounted(() => {
 .tool-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
 .title { font-size: 1.5rem; margin: 0; color: #2d3436; }
 
-.format-controls { 
-  display: flex; align-items: center; justify-content: center; gap: 30px; 
-  margin-bottom: 30px; background: #f8f9fa; padding: 20px; border-radius: 12px;
-  border: 1px solid #eee;
-}
-.control-group { display: flex; align-items: center; gap: 15px; }
-.control-group label { font-size: 0.9rem; color: #636e72; font-weight: bold; }
-.control-group select { 
-  padding: 8px 15px; border: 1px solid #ddd; border-radius: 6px; 
-  background: white; cursor: pointer; outline: none; font-weight: bold; color: #2d3436;
+/* New Converter Bar Styling */
+.converter-bar { 
+  display: flex; align-items: center; justify-content: center; gap: 20px; 
+  margin-bottom: 30px; padding: 15px; background: #fff;
+  border: 1px solid #f1f2f6; border-radius: 50px; /* Pill shape like visual reference */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  max-width: 700px; margin-left: auto; margin-right: auto;
 }
 
-.btn-swap { 
-  background: white; border: 1px solid #ddd; padding: 8px; border-radius: 50%; 
-  cursor: pointer; display: flex; align-items: center; justify-content: center; 
-  transition: all 0.2s; color: #05c46b;
+.select-wrapper { display: flex; align-items: center; gap: 10px; }
+.select-wrapper label { font-size: 0.9rem; color: #636e72; font-weight: 700; white-space: nowrap; }
+
+.select-box { position: relative; }
+.select-box select { 
+  appearance: none; -webkit-appearance: none;
+  padding: 8px 35px 8px 15px; 
+  border: 1px solid #dfe6e9; border-radius: 20px; 
+  background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23636e72' d='M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.762L10.825 4z'/%3E%3C/svg%3E") no-repeat right 10px center;
+  font-size: 0.9rem; color: #2d3436; font-weight: 600; cursor: pointer; outline: none;
+  min-width: 120px; transition: all 0.2s;
 }
-.btn-swap:hover { border-color: #05c46b; transform: scale(1.1); box-shadow: 0 2px 10px rgba(5, 196, 107, 0.2); }
-.btn-swap svg { width: 22px; height: 22px; }
+.select-box select:hover { border-color: #05c46b; }
+.select-box select:focus { border-color: #05c46b; box-shadow: 0 0 0 3px rgba(5, 196, 107, 0.1); }
+
+.btn-swap { 
+  width: 40px; height: 40px; border-radius: 50%; border: 1px solid #dfe6e9;
+  background: white; color: #05c46b; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.btn-swap:hover { 
+  background: #05c46b; color: white; border-color: #05c46b;
+  transform: rotate(180deg); 
+}
+.btn-swap svg { width: 20px; height: 20px; }
 
 .editor-area { display: flex; gap: 20px; height: 500px; }
 .pane { flex: 1; display: flex; flex-direction: column; position: relative; }
