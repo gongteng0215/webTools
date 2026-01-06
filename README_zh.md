@@ -7,11 +7,8 @@
 ![主仪表盘](./screenshots/dashboard_main.png)
 *极简风格的高密度控制面板，集成 16 款常用工具。*
 
-````carousel
 ![加解密助手](./screenshots/crypto_tool.png)
-<!-- slide -->
 ![正则测试器](./screenshots/regex_tester.png)
-````
 *交互式、实时响应的工具界面。*
 
 ## 🚀 核心特性
@@ -70,7 +67,6 @@ npm install
 npm run dev
 ```
 
-并在浏览器中访问 `http://localhost:5173`。
+## 开源协议
 
----
-由 Antigravity 辅助开发。
+本项目基于 [MIT License](./LICENSE) 协议开源。

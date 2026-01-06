@@ -9,11 +9,8 @@ An integrated, minimalist, high-density online toolbox for modern developers, bu
 ![Main Dashboard](./screenshots/dashboard_main.png)
 *Modern minimalist dashboard with 16 utilities.*
 
-````carousel
 ![Crypto Tool](./screenshots/crypto_tool.png)
-<!-- slide -->
 ![Regex Tester](./screenshots/regex_tester.png)
-````
 *Interactive and real-time response interface.*
 
 ## 🚀 Core Features
@@ -72,7 +69,6 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:5173` in your browser.
+## License
 
----
-Developed with the assistance of Antigravity.
+This project is licensed under the [MIT License](./LICENSE).
