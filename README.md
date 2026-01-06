@@ -26,11 +26,10 @@ An integrated, minimalist, high-density online toolbox for modern developers, bu
 
 ### 🛡️ Core Utilities
 1. **Random Password Generator**: Supports strength assessment and multi-dimensional character customization.
-2. **Cron Generator**: Visual editing with human-readable parsing and execution prediction.
-3. **JSON Formatter**: Supports beautification, compression, escaping, and tree folding.
+2. **Cron Generator**: High-precision custom engine with standard cron syntax support, 7-day prediction list, and crontab.guru style UI.
+3. **JSON & CSV Lab**: Bidirectional "Source -> Target" converter. Supports JSON/CSV/Text/Escaped conversions with compression (Minify) and intelligent swap.
 4. **All-in-One Crypto Tool**: Integrated AES, DES, MD5, SHA (1/256/512), Base64, and URL encoding.
 5. **JWT Debugger**: Supports parsing and generation of JWS (Signing) and JWE (Encryption).
-6. **JSON & CSV Lab**: Beautify, compress, and escape JSON. Now supports high-performance bidirectional conversion between JSON and CSV.
 
 ### 🧩 Helper Tools
 6. **Timestamp Converter**: Bidirectional conversion between seconds/milliseconds and dates with a live clock.
@@ -59,7 +58,7 @@ An integrated, minimalist, high-density online toolbox for modern developers, bu
     - `js-yaml`, `dot-properties`: Configuration format conversion.
     - `sql-formatter`: SQL beautification.
     - `qrcode`: QR code generation.
-    - `dayjs`, `cron-parser`: Time and Cron processing.
+    - `dayjs`, `cronstrue`: Date formatting and Cron description.
     - `diff-match-patch`: Text difference comparison.
 
 ## Quick Start
