@@ -1,0 +1,197 @@
+{
+    "common": {
+        "backToHome": "Back to Home",
+        "copy": "Copy",
+        "copied": "Copied",
+        "clear": "Clear",
+        "download": "Download",
+        "upload": "Upload",
+        "remove": "Remove",
+        "input": "Input",
+        "output": "Output",
+        "error": "Error",
+        "description": "Description",
+        "settings": "Settings",
+        "action": "Action"
+    },
+    "home": {
+        "title": "WebTools Dashboard",
+        "subtitle": "High-density, minimalist developer toolbox",
+        "tools": {
+            "password": {
+                "title": "Password Generator",
+                "desc": "Custom length and character types with strength assessment."
+            },
+            "cron": {
+                "title": "Cron Generator",
+                "desc": "Visual cron editing with humanized description and prediction."
+            },
+            "json": {
+                "title": "JSON Formatter",
+                "desc": "Beautify, compress, and escape JSON data.",
+                "format": "Beautify",
+                "compress": "Compress",
+                "escape": "Escape",
+                "unescape": "Unescape",
+                "placeholder": "Paste JSON here..."
+            },
+            "crypto": {
+                "title": "Crypto Tools",
+                "desc": "AES, DES, RSA, Ed25519, MD5, SHA, Base64, URL encoding.",
+                "type": "Process Type",
+                "algorithm": "Algorithm",
+                "mode": "Mode",
+                "padding": "Padding",
+                "key": "Key",
+                "iv": "IV",
+                "encrypt": "Encrypt",
+                "decrypt": "Decrypt",
+                "generateKeys": "Generate Keys",
+                "publicKey": "Public Key",
+                "privateKey": "Private Key",
+                "bitSize": "Bit Size",
+                "encoding": "Encoding",
+                "decode": "Decode",
+                "encode": "Encode",
+                "hash": "Hash",
+                "symmetric": "Symmetric",
+                "asymmetric": "Asymmetric (RSA)",
+                "ssh": "SSH (Ed25519)"
+            },
+            "jwt": {
+                "title": "JWT Debugger",
+                "desc": "Decode and generate JWS/JWE tokens with verification.",
+                "header": "Header",
+                "payload": "Payload",
+                "signature": "Signature / Key",
+                "token": "Encoded Token",
+                "verifyStatus": "Verification Status",
+                "verified": "Signature Verified",
+                "unverified": "Invalid Signature",
+                "secret": "Secret / Private Key"
+            },
+            "timestamp": {
+                "title": "Timestamp Converter",
+                "desc": "Convert between Unix timestamps and human-readable dates.",
+                "current": "Current Time (Local)",
+                "timestamp": "Unix Timestamp",
+                "date": "Date Time",
+                "toTimestamp": "Convert to Timestamp",
+                "toDate": "Convert to Date",
+                "seconds": "Seconds",
+                "ms": "Milliseconds",
+                "now": "Now"
+            },
+            "regex": {
+                "title": "Regex Tester",
+                "desc": "Real-time regex matching with highlighting and common templates.",
+                "regex": "Regular Expression",
+                "flags": "Flags",
+                "text": "Test Text",
+                "result": "Match Results",
+                "noMatch": "No match found",
+                "matches": "{n} matches found",
+                "templates": {
+                    "email": "Email Address",
+                    "url": "URL",
+                    "phone": "Phone Number",
+                    "ip": "IP Address",
+                    "idcard": "ID Card (CN)",
+                    "date": "Date (YYYY-MM-DD)"
+                }
+            },
+            "strings": {
+                "title": "String Tools",
+                "desc": "UUID generator and case conversion (camel, snake, etc.).",
+                "uuid": {
+                    "title": "UUID v4 Generator",
+                    "generate": "Generate UUIDs",
+                    "upper": "Uppercase",
+                    "noHyphen": "No Hyphens"
+                },
+                "case": {
+                    "title": "Case Converter",
+                    "camel": "camelCase",
+                    "pascal": "PascalCase",
+                    "snake": "snake_case",
+                    "kebab": "kebab-case",
+                    "upper": "UPPERCASE",
+                    "lower": "lowercase"
+                }
+            },
+            "colors": {
+                "title": "Color Palette",
+                "desc": "HEX/RGB/HSL conversion with Material Design color grid.",
+                "shades": "Auto-generated Shades",
+                "picker": "Color Picker",
+                "presets": "Material Presets",
+                "format": "Color Format"
+            },
+            "diff": {
+                "title": "Text Diff",
+                "desc": "Compare two text blocks and highlight differences.",
+                "original": "Original Text",
+                "modified": "Modified Text",
+                "diff": "Difference Result",
+                "stats": {
+                    "add": "{n} additions",
+                    "del": "{n} deletions"
+                }
+            },
+            "image": {
+                "title": "Image/Base64",
+                "desc": "Preview and convert images to Base64, or restore images from strings.",
+                "placeholder": "Drag an image here, or click to upload",
+                "hint": "Supports image to Base64, or paste Base64 below to restore",
+                "previewArea": "Image Preview",
+                "base64Area": "Base64 String",
+                "download": "Download Image",
+                "upload": "Upload Image",
+                "invalid": "Please upload an image file",
+                "copyBase64": "Copy Base64",
+                "placeholderBase64": "Paste Base64 string here (with or without data:image/ prefix)..."
+            },
+            "config": {
+                "title": "Config Converter",
+                "desc": "Convert between YAML, JSON, and Properties (Spring Boot).",
+                "source": "Source Format",
+                "target": "Target Format",
+                "placeholder": "Paste source config here...",
+                "error": "Parsing failed: {e}",
+                "clear": "Clear"
+            },
+            "sql": {
+                "title": "SQL Formatter",
+                "desc": "Beautify SQL statements with support for multiple dialects.",
+                "dialect": "SQL Dialect"
+            },
+            "unit": {
+                "title": "Unit Lab",
+                "desc": "Convert between storage capacity (B to TB) and CSS size (px to rem).",
+                "storage": "Storage Capacity",
+                "css": "CSS Sizing",
+                "reset": "Reset",
+                "basePx": "Base Font Size (px)"
+            },
+            "url": {
+                "title": "URL Parser",
+                "desc": "Deconstruct URL paths and query parameters with visual editing.",
+                "url": "URL",
+                "path": "Path",
+                "query": "Query Parameters",
+                "key": "Key",
+                "val": "Value",
+                "add": "Add Parameter"
+            },
+            "qrcode": {
+                "title": "QR Code Generator",
+                "desc": "Convert text or links to QR codes with custom styling.",
+                "text": "QR Code Content",
+                "size": "Size",
+                "color": "Color",
+                "bg": "Background",
+                "download": "Download QR Code"
+            }
+        }
+    }
+}

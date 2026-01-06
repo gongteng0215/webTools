@@ -1,0 +1,233 @@
+{
+    "common": {
+        "backToHome": "返回首页",
+        "copy": "复制",
+        "copied": "已复制",
+        "clear": "清空",
+        "download": "下载",
+        "upload": "上传",
+        "remove": "移除",
+        "input": "输入",
+        "output": "输出",
+        "error": "错误",
+        "description": "说明",
+        "settings": "设置",
+        "action": "操作"
+    },
+    "home": {
+        "title": "Web 实用工具箱",
+        "subtitle": "极简高密度的全能开发工具生态",
+        "tools": {
+            "password": {
+                "title": "随机密码",
+                "desc": "可定制长度与字符类型，支持强度评估。",
+                "options": "字符选项",
+                "lowercase": "小写字母 (a-z)",
+                "uppercase": "大写字母 (A-Z)",
+                "numbers": "数字 (0-9)",
+                "special": "特殊字符",
+                "excludeSimilar": "排除相似字符",
+                "length": "密码长度",
+                "quantity": "生成数量",
+                "generate": "生成密码",
+                "index": "序号",
+                "password": "密码串",
+                "strength": "强度评估",
+                "strengthLevels": {
+                    "vlow": "极低强度",
+                    "low": "低强度",
+                    "med": "中强度",
+                    "high": "高强度",
+                    "ultra": "极高强度"
+                },
+                "lengthHint": "密码长度很安全",
+                "alertCharType": "请至少选择一种字符类型！",
+                "bits": "{n} 位密码"
+            },
+            "cron": {
+                "title": "Cron 生成器",
+                "desc": "可视化编辑 Cron 表达式，支持中文解析与预测。",
+                "inputLabel": "Cron 表达式",
+                "humanDescription": "人类可读描述",
+                "nextExecution": "下次执行时间",
+                "upcomingRuns": "未来执行列表 (最近 7 天)",
+                "randomBtn": "随机生成",
+                "placeholder": "例如：* * * * *",
+                "invalid": "无效的 Cron 表达式",
+                "fields": {
+                    "minute": "分",
+                    "hour": "时",
+                    "day": "日",
+                    "month": "月",
+                    "weekday": "周"
+                }
+            },
+            "json": {
+                "title": "JSON 格式化",
+                "desc": "JSON 数据高亮美化、压缩及转义处理。",
+                "format": "整理美化",
+                "compress": "压缩在一行",
+                "escape": "转义字符串",
+                "unescape": "去转义",
+                "placeholder": "在此粘贴 JSON 内容..."
+            },
+            "crypto": {
+                "title": "加密助手",
+                "desc": "AES, RSA, Ed25519, MD5, Base64 等全能加解密。",
+                "type": "处理类型",
+                "algorithm": "算法",
+                "mode": "工作模式",
+                "padding": "填充方式",
+                "key": "密钥 (Key)",
+                "iv": "偏移量 (IV)",
+                "encrypt": "立即加密",
+                "decrypt": "立即解密",
+                "generateKeys": "生成密钥对",
+                "publicKey": "公钥 (Public Key)",
+                "privateKey": "私钥 (Private Key)",
+                "bitSize": "位数",
+                "encoding": "编码转换",
+                "decode": "解码",
+                "encode": "编码",
+                "hash": "哈希摘要",
+                "symmetric": "对称加密",
+                "asymmetric": "非对称 (RSA)",
+                "ssh": "SSH 密钥对"
+            },
+            "jwt": {
+                "title": "JWT 调试器",
+                "desc": "支持 JWS/JWE 解析与生成，查看 Header 和 Payload。",
+                "header": "标头 (Header)",
+                "payload": "载荷 (Payload)",
+                "signature": "签名 / 密钥",
+                "token": "编码后的 Token",
+                "verifyStatus": "验证状态",
+                "verified": "签名验证通过",
+                "unverified": "签名无效",
+                "secret": "盐值 / 私钥"
+            },
+            "timestamp": {
+                "title": "时间戳转换",
+                "desc": "秒/毫秒时间戳与日期字符串双向转换。",
+                "current": "当前本地时间",
+                "timestamp": "Unix 时间戳",
+                "date": "日期字符串",
+                "toTimestamp": "转换为时间戳",
+                "toDate": "转换为日期",
+                "seconds": "秒 (s)",
+                "ms": "毫秒 (ms)",
+                "now": "获取当前"
+            },
+            "regex": {
+                "title": "正则测试",
+                "desc": "实时正则匹配高亮，内置常用工具模板。",
+                "regex": "正则表达式",
+                "flags": "标志 (Flags)",
+                "text": "测试文本",
+                "result": "匹配结果",
+                "noMatch": "未发现匹配项",
+                "matches": "共发现 {n} 处匹配",
+                "templates": {
+                    "email": "邮箱地址",
+                    "url": "网址 URL",
+                    "phone": "手机号",
+                    "ip": "IP 地址",
+                    "idcard": "身份证号",
+                    "date": "日期 (YYYY-MM-DD)"
+                }
+            },
+            "strings": {
+                "title": "字符串实验室",
+                "desc": "批量 UUID 生成与多种命名冲突风格快速转换。",
+                "uuid": {
+                    "title": "UUID v4 生成器",
+                    "generate": "批量生成 UUID",
+                    "upper": "大写字母",
+                    "noHyphen": "去除连字符"
+                },
+                "case": {
+                    "title": "文本转换器",
+                    "camel": "小驼峰 (camelCase)",
+                    "pascal": "大驼峰 (PascalCase)",
+                    "snake": "下划线 (snake_case)",
+                    "kebab": "短横线 (kebab-case)",
+                    "upper": "全部大写",
+                    "lower": "全部小写"
+                }
+            },
+            "colors": {
+                "title": "颜色画板",
+                "desc": "HEX/RGB/HSL 互转，集成 Material 设计色谱。",
+                "shades": "自动生成明暗阶梯",
+                "picker": "颜色拾取器",
+                "presets": "Material 设计标准色",
+                "format": "颜色格式"
+            },
+            "diff": {
+                "title": "文本对比",
+                "desc": "对比两段文本的差异，支持高亮显示修改点。",
+                "original": "原始文本",
+                "modified": "修改文本",
+                "diff": "对比结果",
+                "stats": {
+                    "add": "{n} 处新增",
+                    "del": "{n} 处删除"
+                }
+            },
+            "image": {
+                "title": "图片/Base64",
+                "desc": "图片预览转 Base64 字符串，或字符串还原图片。",
+                "placeholder": "拖拽图片到这里，或点击上传",
+                "hint": "支持图片转 Base64，或下方粘贴 Base64 还原图片",
+                "previewArea": "预览预览",
+                "base64Area": "Base64 字符串",
+                "download": "下载图片",
+                "upload": "上传图片",
+                "invalid": "请上传图片文件",
+                "copyBase64": "复制全部",
+                "placeholderBase64": "在此粘贴 Base64 字符串（支持带或不带 data:image/ 前缀）..."
+            },
+            "config": {
+                "title": "配置转换器",
+                "desc": "YAML, JSON, Properties (Spring Boot) 格式互转。",
+                "source": "源格式",
+                "target": "目标格式",
+                "placeholder": "请粘贴需要转换的内容...",
+                "error": "解析失败: {e}",
+                "clear": "清空"
+            },
+            "sql": {
+                "title": "SQL 格式化",
+                "desc": "美化 SQL 语句，支持多种主流数据库方言。",
+                "dialect": "SQL 方言"
+            },
+            "unit": {
+                "title": "单位实验室",
+                "desc": "存储容量 (B 到 TB) 与 CSS 尺寸 (px 到 rem) 换算。",
+                "storage": "存储容量换算",
+                "css": "CSS 尺寸换算",
+                "reset": "重置",
+                "basePx": "基础字号 (px)"
+            },
+            "url": {
+                "title": "URL 解析器",
+                "desc": "深度拆解 URL 路径与 Query 参数的可视化编辑。",
+                "url": "URL 地址",
+                "path": "路径 (Path)",
+                "query": "查询参数 (Query)",
+                "key": "键",
+                "val": "值",
+                "add": "添加参数"
+            },
+            "qrcode": {
+                "title": "二维码生成",
+                "desc": "文本或链接极速转二维码，支持定制外观与下载。",
+                "text": "二维码内容",
+                "size": "尺寸大小",
+                "color": "前景色",
+                "bg": "背景色",
+                "download": "下载二维码图片"
+            }
+        }
+    }
+}
