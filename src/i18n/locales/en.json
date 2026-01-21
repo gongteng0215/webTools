@@ -51,10 +51,9 @@
             },
             "json": {
                 "title": "JSON & CSV Lab",
-                "description": "Beautify, compress, escape JSON, and convert between JSON and CSV.",
+                "desc": "Beautify, compress, escape JSON, and convert between JSON and CSV.",
                 "placeholder": "Enter JSON or CSV data here...",
                 "format": "Format JSON",
-                "compress": "Compress JSON",
                 "escape": "Escape JSON",
                 "unescape": "Unescape JSON",
                 "jsonToCsv": "JSON to CSV",
@@ -88,6 +87,21 @@
                     "engine": "Engine",
                     "cpu": "CPU"
                 }
+            },
+            "api": {
+                "title": "API Client",
+                "desc": "Lightweight Postman-like HTTP request testing tool.",
+                "send": "Send",
+                "sending": "Sending...",
+                "params": "Params",
+                "headers": "Headers",
+                "body": "Body",
+                "key": "Key",
+                "value": "Value",
+                "addRow": "Add Row",
+                "rawText": "Raw Text",
+                "formData": "Form Data",
+                "corsError": "CORS Error: The target server does not allow cross-origin requests from the browser."
             },
             "crypto": {
                 "title": "Crypto Tools",

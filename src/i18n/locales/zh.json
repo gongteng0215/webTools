@@ -110,6 +110,21 @@
                     "cpu": "架构"
                 }
             },
+            "api": {
+                "title": "API 客户端",
+                "desc": "轻量级 HTTP 请求调试工具，类似 Postman。",
+                "send": "发送",
+                "sending": "发送中...",
+                "params": "参数",
+                "headers": "请求头",
+                "body": "请求体",
+                "key": "键",
+                "value": "值",
+                "addRow": "添加一行",
+                "rawText": "纯文本",
+                "formData": "表单数据",
+                "corsError": "CORS 错误：目标服务器不允许来自浏览器的跨域请求。"
+            },
             "crypto": {
                 "title": "加密助手",
                 "desc": "AES, RSA, Ed25519, MD5, Base64 等全能加解密。",

@@ -18,6 +18,7 @@ import UrlParser from '../views/UrlParser.vue'
 import QrCodeGenerator from '../views/QrCodeGenerator.vue'
 import MarkdownPreview from '../views/MarkdownPreview.vue'
 import UAParser from '../views/UAParser.vue'
+import ApiClient from '../views/ApiClient.vue'
 
 const routes = [
     { path: '/', component: HomeView },
@@ -38,7 +39,8 @@ const routes = [
     { path: '/url-parse', component: UrlParser },
     { path: '/qrcode', component: QrCodeGenerator },
     { path: '/markdown', component: MarkdownPreview },
-    { path: '/ua', component: UAParser }
+    { path: '/ua', component: UAParser },
+    { path: '/api-client', component: ApiClient }
 ]
 
 const router = createRouter({
