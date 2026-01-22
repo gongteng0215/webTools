@@ -1,5 +1,7 @@
 # WebTools Dashboard
 
+> **🔗 Live Demo**: [https://gongteng0215.github.io/webTools/](https://gongteng0215.github.io/webTools/)
+
 An integrated, minimalist, high-density online toolbox for modern developers, built with **Vue 3 + Vite**. Designed to provide "one-stop" development auxiliary functions without switching tabs or searching third-party websites.
 
 [中文文档 (Chinese Documentation)](./README_zh.md)
@@ -15,7 +17,7 @@ An integrated, minimalist, high-density online toolbox for modern developers, bu
 
 ## 🚀 Core Features
 
-- **18-in-1 Versatile Toolbox**: Covers encryption/decryption, configuration conversion, network requests, UI design, and more.
+- **19-in-1 Versatile Toolbox**: Covers encryption/decryption, configuration conversion, network requests, UI design, and more.
 - **Real-time Response**: Almost all tools support instant "input-to-output" feedback.
 - **High-density Dashboard**: Minimalist "control panel" layout for quick tool access and reduced scrolling.
 - **Spring Boot Friendly**: Special support for deep conversion between `.properties` and `YAML`.
@@ -47,6 +49,7 @@ An integrated, minimalist, high-density online toolbox for modern developers, bu
 16. **QR Code Assistant**: Instant text or link conversion to QR codes with custom sizing and download.
 17. **Markdown Pro**: Real-time split-screen Markdown editor with GitHub-flavored preview.
 18. **User Agent Parser**: Deeply analyze UA strings to identify browser, engine, OS, and device type.
+19. **API Client**: A lightweight REST API client for testing HTTP requests (GET, POST, PUT, DELETE).
 
 ## 💻 Tech Stack
 
