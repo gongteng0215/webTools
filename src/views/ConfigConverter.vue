@@ -93,7 +93,19 @@ const swap = () => {
   }
 }
 
-// ... existing code ...
+const clearInput = () => {
+  input.value = ''
+  output.value = ''
+  error.value = ''
+}
+
+const copyOutput = () => {
+  if (!output.value) return
+  navigator.clipboard.writeText(output.value)
+}
+
+watch([input, sourceFormat, targetFormat], convert)
+onMounted(convert)
 
 </script>
 
