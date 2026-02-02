@@ -263,29 +263,33 @@ onMounted(executeParse)
 
 .cron-guru-container {
   min-height: 100vh;
-  background-color: #1a1a1a;
-  color: #fff;
+  color: #2d3436;
   font-family: 'Open Sans', sans-serif;
   padding: 40px 20px;
 }
 
 .back-nav {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto 40px;
 }
 .btn-back {
-  color: #777;
+  color: #7c4dff;
   text-decoration: none;
   font-size: 0.9rem;
+  font-weight: 700;
 }
 .btn-back:hover {
-  color: #aaa;
+  opacity: 0.8;
 }
 
 .content {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   text-align: center;
+  background: #fff;
+  border-radius: 16px;
+  padding: 50px 40px 60px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .guru-header {
@@ -294,13 +298,13 @@ onMounted(executeParse)
 .logo-text {
   font-size: 4rem;
   font-weight: 700;
-  color: #ffff88;
+  color: #7c4dff;
   margin: 0;
   letter-spacing: -2px;
-  text-shadow: 0 0 10px rgba(255, 255, 136, 0.3);
+  text-shadow: 0 0 10px rgba(124, 77, 255, 0.2);
 }
 .subtitle {
-  color: #999;
+  color: #636e72;
   font-size: 1.1rem;
   margin-top: 10px;
 }
@@ -317,11 +321,11 @@ onMounted(executeParse)
   font-size: 3rem;
   font-weight: 400;
   margin: 0 0 15px;
-  color: #fff;
+  color: #2d3436;
   line-height: 1.2;
 }
 .next-text {
-  color: #777;
+  color: #636e72;
   font-size: 1rem;
   font-family: monospace;
 }
@@ -330,7 +334,7 @@ onMounted(executeParse)
   cursor: pointer;
 }
 .error-text {
-  color: #ff7675;
+  color: #e74c3c;
   font-size: 0.9rem;
   margin-top: 10px;
   font-family: monospace;
@@ -345,8 +349,8 @@ onMounted(executeParse)
   position: absolute;
   right: 20px;
   top: -30px;
-  background: #ffffbb;
-  color: #222;
+  background: #7c4dff;
+  color: #fff;
   padding: 5px 15px;
   font-size: 0.9rem;
   border-radius: 4px 4px 0 0;
@@ -354,19 +358,19 @@ onMounted(executeParse)
   font-weight: 700;
 }
 .input-box {
-  background: #111;
-  border: 4px solid #ffffbb;
+  background: #f8f9fb;
+  border: 2px solid #dfe6e9;
   border-radius: 12px;
   padding: 15px 25px;
   display: flex;
   align-items: center;
-  box-shadow: 0 0 30px rgba(255, 255, 187, 0.15);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
 }
 .cron-input {
   flex: 1;
   background: transparent;
   border: none;
-  color: #fff;
+  color: #2d3436;
   font-size: 3.5rem;
   font-family: monospace;
   text-align: center;
@@ -374,17 +378,17 @@ onMounted(executeParse)
   letter-spacing: 5px;
 }
 .btn-copy {
-  background: #ffffbb;
+  background: #7c4dff;
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
-  color: #111;
+  color: #fff;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
 }
 .btn-copy:hover {
-  background: #fff;
+  background: #6c3df0;
 }
 
 .labels-grid {
@@ -392,7 +396,7 @@ onMounted(executeParse)
   grid-template-columns: repeat(5, 1fr);
   max-width: 600px;
   margin: 0 auto 80px;
-  color: #777;
+  color: #636e72;
   font-size: 1.1rem;
 }
 .label-item {
@@ -401,7 +405,7 @@ onMounted(executeParse)
   transition: color 0.2s;
 }
 .label-item:hover {
-  color: #ffff88;
+  color: #7c4dff;
 }
 
 .syntax-table {
@@ -409,19 +413,19 @@ onMounted(executeParse)
   max-width: 450px;
   margin: 0 auto;
   border-collapse: collapse;
-  color: #666;
+  color: #636e72;
   font-family: monospace;
 }
 .syntax-table td {
   padding: 10px 20px;
-  border-top: 1px solid #333;
+  border-top: 1px solid #edf0f2;
 }
 .symbol {
   text-align: right;
   font-weight: 700;
   font-size: 1.3rem;
   width: 40%;
-  color: #888;
+  color: #7c4dff;
 }
 .meaning {
   text-align: left;
@@ -431,14 +435,14 @@ onMounted(executeParse)
 .upcoming-section {
     margin-top: 60px;
     padding-top: 40px;
-    border-top: 1px solid #333;
+    border-top: 1px solid #edf0f2;
     text-align: left;
     max-width: 450px;
     margin-left: auto;
     margin-right: auto;
 }
 .upcoming-title {
-    color: #ffff88;
+    color: #7c4dff;
     font-size: 1.1rem;
     margin-bottom: 20px;
     text-align: center;
@@ -448,12 +452,12 @@ onMounted(executeParse)
     padding: 0;
     margin: 0;
     font-family: monospace;
-    color: #aaa;
+    color: #636e72;
     text-align: center;
 }
 .upcoming-list li {
     padding: 6px 0;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #edf0f2;
 }
 .upcoming-list li:last-child {
     border-bottom: none;
