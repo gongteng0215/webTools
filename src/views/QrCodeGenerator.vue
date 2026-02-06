@@ -96,7 +96,7 @@ onMounted(generateQR)
 
 <style scoped>
 .tool-container { width: 100%; max-width: 900px; margin: 0 auto; }
-.btn-back { text-decoration: none; color: #2d3436; font-weight: bold; margin-bottom: 20px; display: inline-block; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; margin-bottom: 20px; display: inline-block; }
 
 .tool-card { background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px; }
 .title { font-size: 1.5rem; margin: 0 0 30px; color: #2d3436; }
@@ -114,7 +114,7 @@ textarea:focus { border-color: #2d3436; background: white; }
 .config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .config-grid input, .config-grid select { padding: 10px; border: 1px solid #eee; border-radius: 8px; background: white; outline: none; font-family: 'Fira Code', monospace; }
 
-.btn-download { background: #2d3436; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 10px; }
+.btn-download { background: var(--primary); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 10px; }
 
 .qr-box { width: 100%; max-width: 320px; aspect-ratio: 1; background: #fafafa; border: 1px solid #eee; border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 15px; }
 .qr-box img { max-width: 100%; height: auto; }

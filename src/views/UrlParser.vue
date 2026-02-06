@@ -120,7 +120,7 @@ watch(urlInput, parseUrl, { immediate: true })
 
 <style scoped>
 .tool-container { width: 100%; max-width: 1000px; margin: 0 auto; }
-.btn-back { text-decoration: none; color: #1e3799; font-weight: bold; margin-bottom: 20px; display: inline-block; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; margin-bottom: 20px; display: inline-block; }
 
 .tool-card { background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px; }
 .title { font-size: 1.5rem; margin: 0 0 25px; color: #2d3436; }
@@ -140,7 +140,7 @@ textarea:focus { border-color: #1e3799; background: white; }
 .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
 .section-header h3 { font-size: 1.1rem; color: #2d3436; margin: 0; }
 
-.btn-add { background: #1e3799; color: white; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: bold; }
+.btn-add { background: var(--primary); color: white; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: bold; }
 
 .params-table { border: 1px solid #f1f1f1; border-radius: 8px; overflow: hidden; }
 .table-header { display: grid; grid-template-columns: 1fr 1fr 60px; background: #fafafa; padding: 10px 15px; font-size: 0.75rem; color: #b2bec3; font-weight: bold; text-transform: uppercase; }
@@ -148,7 +148,7 @@ textarea:focus { border-color: #1e3799; background: white; }
 .table-row input { border: 1px solid transparent; padding: 10px; font-family: 'Fira Code', monospace; font-size: 0.9rem; outline: none; border-radius: 4px; color: #2d3436; }
 .table-row input:focus { background: #f8f9fa; border-color: #eee; }
 
-.btn-remove { background: none; border: none; color: #ff7675; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0.6; transition: opacity 0.2s; }
+.btn-remove { background: none; border: none; color: var(--primary); font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0.6; transition: opacity 0.2s; }
 .btn-remove:hover { opacity: 1; }
 
 .empty-hint { text-align: center; padding: 30px; color: #b2bec3; font-size: 0.9rem; background: #fafafa; }

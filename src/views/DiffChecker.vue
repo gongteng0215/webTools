@@ -61,7 +61,7 @@ const clearAll = () => {
 <style scoped>
 .tool-container { width: 100%; max-width: 1200px; margin: 0 auto; height: 90vh; display: flex; flex-direction: column; }
 .back-nav { margin-bottom: 20px; }
-.btn-back { text-decoration: none; color: #ff9f43; font-weight: bold; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; }
 
 .tool-card {
   background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px;
@@ -70,7 +70,7 @@ const clearAll = () => {
 
 .tool-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
 .title { font-size: 1.5rem; margin: 0; color: #2d3436; }
-.btn-clear { background: #f1f2f6; border: 1px solid #ddd; padding: 8px 15px; border-radius: 6px; cursor: pointer; color: #636e72; }
+.btn-clear { background: var(--primary-soft); border: 1px solid var(--primary-border); padding: 8px 15px; border-radius: 6px; cursor: pointer; color: var(--primary); }
 
 .diff-editor { flex: 1; display: flex; flex-direction: column; gap: 20px; overflow: hidden; }
 

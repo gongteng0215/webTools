@@ -1,6 +1,7 @@
 <script setup>
 import { ref, reactive, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { showToast } from '../utils/toast'
 
 const { t } = useI18n()
 
@@ -147,7 +148,7 @@ const sendRequest = async () => {
 const copyResponse = () => {
   if (!response.body) return
   navigator.clipboard.writeText(response.body)
-  alert(t('common.copied'))
+  showToast(t('common.copied'))
 }
 
 const formatSize = (bytes) => {
@@ -286,7 +287,7 @@ const statusClass = computed(() => {
 <style scoped>
 .api-container { width: 100%; max-width: 1100px; margin: 0 auto; }
 .back-nav { margin-bottom: 20px; }
-.btn-back { text-decoration: none; color: #7c4dff; font-weight: bold; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; }
 
 .api-card { 
   background: white; border-radius: 12px; 
@@ -297,37 +298,37 @@ const statusClass = computed(() => {
 /* Request Bar */
 .request-bar { display: flex; gap: 10px; margin-bottom: 20px; }
 .method-select { 
-  padding: 12px 15px; border: 1px solid #dfe6e9; border-radius: 8px; 
+  padding: 12px 15px; border: 1px solid var(--primary-border); border-radius: 8px; 
   font-weight: bold; cursor: pointer; background: #f8f9fa; min-width: 100px;
   outline: none;
 }
-.method-select.get { color: #00b894; }
-.method-select.post { color: #fdcb6e; }
-.method-select.put { color: #0984e3; }
-.method-select.patch { color: #6c5ce7; }
-.method-select.delete { color: #d63031; }
+.method-select.get { color: var(--primary); }
+.method-select.post { color: var(--primary); }
+.method-select.put { color: var(--primary); }
+.method-select.patch { color: var(--primary); }
+.method-select.delete { color: var(--primary); }
 
 .url-input { 
-  flex: 1; padding: 12px 15px; border: 1px solid #dfe6e9; border-radius: 8px; 
+  flex: 1; padding: 12px 15px; border: 1px solid var(--primary-border); border-radius: 8px; 
   font-size: 0.95rem; outline: none; transition: border-color 0.2s;
 }
-.url-input:focus { border-color: #7c4dff; }
+.url-input:focus { border-color: var(--primary); }
 
 .btn-send { 
-  padding: 12px 30px; background: #7c4dff; color: white; border: none; 
+  padding: 12px 30px; background: var(--primary); color: white; border: none; 
   border-radius: 8px; font-weight: bold; cursor: pointer; transition: all 0.2s;
 }
-.btn-send:hover { background: #6c5ce7; }
+.btn-send:hover { background: var(--primary-hover); }
 .btn-send:disabled { background: #b2bec3; cursor: not-allowed; }
 
 /* Tabs */
 .tabs { display: flex; gap: 5px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
 .tabs button { 
   padding: 8px 20px; background: none; border: none; cursor: pointer; 
-  font-size: 0.9rem; color: #636e72; border-radius: 6px; transition: all 0.2s;
+  font-size: 0.9rem; color: var(--text-muted); border-radius: 6px; transition: all 0.2s;
 }
 .tabs button:hover { background: #f8f9fa; }
-.tabs button.active { background: #7c4dff; color: white; }
+.tabs button.active { background: var(--primary); color: white; }
 
 /* Tab Content */
 .tab-content { background: #f8f9fa; border-radius: 8px; padding: 15px; min-height: 120px; }
@@ -335,32 +336,32 @@ const statusClass = computed(() => {
 .kv-row { 
   display: flex; align-items: center; gap: 10px; margin-bottom: 8px; 
 }
-.kv-row input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; accent-color: #7c4dff; }
+.kv-row input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; accent-color: var(--primary); }
 .kv-row input[type="text"] { 
-  flex: 1; padding: 8px 12px; border: 1px solid #dfe6e9; border-radius: 6px; 
+  flex: 1; padding: 8px 12px; border: 1px solid var(--primary-border); border-radius: 6px; 
   font-size: 0.85rem; outline: none;
 }
-.kv-row input[type="text"]:focus { border-color: #7c4dff; }
+.kv-row input[type="text"]:focus { border-color: var(--primary); }
 .btn-remove { 
-  width: 28px; height: 28px; border: none; background: #ff7675; color: white; 
+  width: 28px; height: 28px; border: none; background: var(--primary); color: white; 
   border-radius: 4px; cursor: pointer; font-size: 1.1rem; line-height: 1;
 }
 .btn-add { 
-  padding: 6px 15px; background: #dfe6e9; border: none; border-radius: 6px; 
-  cursor: pointer; font-size: 0.85rem; color: #2d3436; margin-top: 5px;
+  padding: 6px 15px; background: var(--primary-soft); border: 1px solid var(--primary-border); border-radius: 6px; 
+  cursor: pointer; font-size: 0.85rem; color: var(--primary); margin-top: 5px;
 }
-.btn-add:hover { background: #b2bec3; }
+.btn-add:hover { background: var(--primary); color: white; }
 
 /* Body Editor */
 .body-type-selector { margin-bottom: 10px; display: flex; gap: 20px; }
 .body-type-selector label { display: flex; align-items: center; gap: 5px; cursor: pointer; font-size: 0.9rem; }
-.body-type-selector input { accent-color: #7c4dff; }
+.body-type-selector input { accent-color: var(--primary); }
 .body-editor { 
-  width: 100%; height: 150px; border: 1px solid #dfe6e9; border-radius: 8px; 
+  width: 100%; height: 150px; border: 1px solid var(--primary-border); border-radius: 8px; 
   padding: 12px; font-family: 'Fira Code', monospace; font-size: 0.85rem; 
   resize: vertical; outline: none; background: white;
 }
-.body-editor:focus { border-color: #7c4dff; }
+.body-editor:focus { border-color: var(--primary); }
 
 /* Response Section */
 .response-section { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
@@ -376,19 +377,19 @@ const statusClass = computed(() => {
 .status-client-error { background: #f8d7da; color: #721c24; }
 .status-server-error { background: #f5c6cb; color: #721c24; }
 
-.meta-item { color: #636e72; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); font-size: 0.85rem; }
 
 .btn-copy { 
-  margin-left: auto; padding: 6px 15px; background: #00b894; color: white; 
+  margin-left: auto; padding: 6px 15px; background: var(--primary); color: white; 
   border: none; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: bold;
 }
 
 .response-tabs { display: flex; gap: 5px; margin-bottom: 10px; }
 .response-tabs button { 
-  padding: 6px 15px; background: #f1f2f6; border: none; cursor: pointer; 
-  font-size: 0.85rem; border-radius: 6px; color: #636e72;
+  padding: 6px 15px; background: var(--primary-soft); border: 1px solid var(--primary-border); cursor: pointer; 
+  font-size: 0.85rem; border-radius: 6px; color: var(--primary);
 }
-.response-tabs button.active { background: #7c4dff; color: white; }
+.response-tabs button.active { background: var(--primary); color: white; }
 
 .response-body { 
   background: #2d3436; color: #dfe6e9; padding: 20px; border-radius: 8px; 
@@ -400,7 +401,7 @@ const statusClass = computed(() => {
 .header-row { padding: 6px 0; border-bottom: 1px solid #eee; font-size: 0.85rem; }
 .header-row:last-child { border-bottom: none; }
 .header-key { font-weight: bold; color: #2d3436; margin-right: 10px; }
-.header-value { color: #636e72; word-break: break-all; }
+.header-value { color: var(--text-muted); word-break: break-all; }
 
 .error-msg { 
   background: #fff5f5; color: #d63031; padding: 15px; border-radius: 8px; 

@@ -5,6 +5,7 @@ import { JSEncrypt } from 'jsencrypt'
 import nacl from 'tweetnacl'
 import naclUtil from 'tweetnacl-util'
 import { useI18n } from 'vue-i18n'
+import { showToast } from '../utils/toast'
 
 const { t } = useI18n()
 
@@ -128,7 +129,7 @@ const clearAll = () => {
 const copyResult = () => {
   if (outputText.value) {
     navigator.clipboard.writeText(outputText.value)
-    alert(t('common.copied'))
+    showToast(t('common.copied'))
   }
 }
 
@@ -213,7 +214,7 @@ const canDecrypt = () => ['AES', 'DES', 'Base64', 'URL', 'RSA'].includes(algorit
 <style scoped>
 .view-container { width: 100%; max-width: 1200px; margin: 0 auto; }
 .back-nav { margin-bottom: 20px; }
-.btn-back { text-decoration: none; color: #ff7675; font-weight: bold; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; }
 
 .crypto-card {
   background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -228,25 +229,25 @@ const canDecrypt = () => ['AES', 'DES', 'Base64', 'URL', 'RSA'].includes(algorit
 
 .toolbar { display: flex; gap: 10px; align-items: center; }
 .select-algo, .toolbar button {
-  padding: 8px 12px; border-radius: 6px; border: 1px solid #ddd;
-  background: white; font-size: 0.9rem; cursor: pointer;
+  padding: 8px 12px; border-radius: 6px; border: 1px solid var(--primary-border);
+  background: white; font-size: 0.9rem; cursor: pointer; color: var(--text-muted);
 }
 
 .mode-switch { display: flex; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; }
 .mode-switch button { border: none; border-radius: 0; background: white; padding: 8px 15px; }
-.mode-switch button.active { background: #ff7675; color: white; }
+.mode-switch button.active { background: var(--primary); color: white; }
 
-.btn-primary { background: #ff7675 !important; color: white !important; border-color: #ff7675 !important; }
+.btn-primary { background: var(--primary) !important; color: white !important; border-color: var(--primary) !important; }
 
 .config-bar { padding: 15px 25px; background: #fffcfc; border-bottom: 1px solid #eee; display: flex; gap: 30px; flex-wrap: wrap; }
 .rsa-config { flex-direction: column; gap: 15px; }
 .config-item { display: flex; align-items: center; gap: 10px; }
 .config-item.full-width { flex-direction: column; align-items: flex-start; width: 100%; }
-.config-item label { font-size: 0.9rem; color: #636e72; font-weight: bold; margin-bottom: 5px; }
+.config-item label { font-size: 0.9rem; color: var(--text-muted); font-weight: bold; margin-bottom: 5px; }
 .config-item input { padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; width: 250px; }
 .config-item textarea { width: 100%; height: 80px; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-family: monospace; font-size: 0.85rem; }
 
-.btn-gen-keys { background: #ff7675; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+.btn-gen-keys { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; }
 
 .editor-panes { flex: 1; display: flex; min-height: 300px; }
 .pane { flex: 1; position: relative; border-right: 1px solid #eee; }

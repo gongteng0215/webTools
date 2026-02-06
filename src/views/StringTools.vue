@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 import { useI18n } from 'vue-i18n'
+import { showToast } from '../utils/toast'
 
 const { t } = useI18n()
 
@@ -43,12 +44,12 @@ const generateUUIDs = () => {
 
 const copyUUID = (text) => {
   navigator.clipboard.writeText(text)
-  alert(t('common.copied'))
+  showToast(t('common.copied'))
 }
 
 const copyAllUUIDs = () => {
   navigator.clipboard.writeText(uuidList.value.join('\n'))
-  alert(t('common.copied'))
+  showToast(t('common.copied'))
 }
 </script>
 
@@ -102,7 +103,7 @@ const copyAllUUIDs = () => {
 <style scoped>
 .tool-container { width: 100%; max-width: 900px; margin: 0 auto; }
 .back-nav { margin-bottom: 20px; }
-.btn-back { text-decoration: none; color: #00cec9; font-weight: bold; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; }
 
 .tool-card {
   background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px;
@@ -114,20 +115,20 @@ const copyAllUUIDs = () => {
 
 .case-box textarea { width: 100%; height: 120px; padding: 15px; border: 1px solid #eee; border-radius: 8px; font-family: 'Fira Code', monospace; font-size: 1rem; margin-bottom: 15px; resize: none; background: #fafafa; outline: none; }
 .buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-.buttons button { background: white; border: 1px solid #ddd; padding: 8px 15px; border-radius: 6px; cursor: pointer; transition: all 0.2s; font-size: 0.85rem; color: #636e72; }
-.buttons button:hover { background: #00cec9; color: white; border-color: #00cec9; }
+.buttons button { background: white; border: 1px solid var(--primary-border); padding: 8px 15px; border-radius: 6px; cursor: pointer; transition: all 0.2s; font-size: 0.85rem; color: var(--text-muted); }
+.buttons button:hover { background: var(--primary); color: white; border-color: var(--primary); }
 
 .uuid-box .control { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
 .uuid-box input { width: 80px; padding: 8px; border: 1px solid #ddd; border-radius: 6px; }
-.btn-action { background: #00cec9; color: white; border: none; padding: 8px 25px; border-radius: 6px; cursor: pointer; font-weight: bold; }
-.btn-sub { background: #f1f2f6; border: 1px solid #ddd; padding: 8px 15px; border-radius: 6px; cursor: pointer; }
+.btn-action { background: var(--primary); color: white; border: none; padding: 8px 25px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+.btn-sub { background: var(--primary-soft); border: 1px solid var(--primary-border); padding: 8px 15px; border-radius: 6px; cursor: pointer; color: var(--primary); }
 
 .uuid-results { background: #f9f9f9; border-radius: 8px; padding: 10px; max-height: 400px; overflow-y: auto; border: 1px solid #eee; }
 .uuid-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; border-bottom: 1px solid #eee; }
 .uuid-item:last-child { border-bottom: none; }
 .uuid-item code { font-family: 'Fira Code', monospace; color: #636e72; font-size: 0.9rem; }
-.uuid-item button { font-size: 0.75rem; background: white; border: 1px solid #ddd; padding: 4px 10px; border-radius: 4px; cursor: pointer; color: #636e72; }
-.uuid-item button:hover { border-color: #00cec9; color: #00cec9; }
+.uuid-item button { font-size: 0.75rem; background: white; border: 1px solid var(--primary-border); padding: 4px 10px; border-radius: 4px; cursor: pointer; color: var(--text-muted); }
+.uuid-item button:hover { border-color: var(--primary); color: var(--primary); }
 
 .divider { height: 1px; background: #eee; width: 100%; margin: 35px 0; }
 </style>

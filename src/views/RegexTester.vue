@@ -99,7 +99,7 @@ const applyTemplate = (tpl) => {
 <style scoped>
 .view-container { width: 100%; max-width: 1100px; margin: 0 auto; }
 .back-nav { margin-bottom: 20px; }
-.btn-back { text-decoration: none; color: #fd79a8; font-weight: bold; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; }
 
 .tool-card {
   background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px;
@@ -117,8 +117,8 @@ const applyTemplate = (tpl) => {
 
 .templates { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; align-items: center; }
 .templates .label { font-size: 0.8rem; color: #b2bec3; margin-right: 5px; text-transform: uppercase; font-weight: bold; }
-.btn-tpl { background: #f9f9f9; border: 1px solid #eee; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; color: #636e72; }
-.btn-tpl:hover { background: #fd79a8; color: white; border-color: #fd79a8; }
+.btn-tpl { background: var(--primary-soft); border: 1px solid var(--primary-border); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; color: var(--primary); }
+.btn-tpl:hover { background: var(--primary); color: white; border-color: var(--primary); }
 
 .test-area { display: flex; gap: 20px; height: 500px; }
 .pane { flex: 1; display: flex; flex-direction: column; }

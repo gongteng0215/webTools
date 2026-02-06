@@ -99,21 +99,21 @@ const updateFromRem = () => {
 
 <style scoped>
 .tool-container { width: 100%; max-width: 800px; margin: 0 auto; }
-.btn-back { text-decoration: none; color: #eb4d4b; font-weight: bold; margin-bottom: 20px; display: inline-block; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; margin-bottom: 20px; display: inline-block; }
 
 .tool-card { background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px; }
 .title { font-size: 1.5rem; margin: 0 0 30px; color: #2d3436; }
 
 .tabs { display: flex; gap: 10px; margin-bottom: 30px; border-bottom: 1px solid #eee; }
-.tabs button { padding: 10px 20px; border: none; background: none; cursor: pointer; color: #636e72; font-weight: bold; border-bottom: 3px solid transparent; }
-.tabs button.active { color: #eb4d4b; border-bottom-color: #eb4d4b; }
+.tabs button { padding: 10px 20px; border: none; background: none; cursor: pointer; color: var(--text-muted); font-weight: bold; border-bottom: 3px solid transparent; }
+.tabs button.active { color: var(--primary); border-bottom-color: var(--primary); }
 
 .content-box { display: flex; flex-direction: column; gap: 15px; }
 
 .converter-item { display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .converter-item label { font-size: 0.75rem; color: #b2bec3; font-weight: bold; text-transform: uppercase; }
 .converter-item input { padding: 12px 15px; border: 1px solid #eee; border-radius: 8px; font-size: 1.1rem; font-family: 'Fira Code', monospace; outline: none; background: #fafafa; transition: border-color 0.2s; }
-.converter-item input:focus { border-color: #eb4d4b; background: white; }
+.converter-item input:focus { border-color: var(--primary); background: white; }
 
 .screen-converter .root-setup { display: flex; align-items: center; gap: 15px; background: #fdfdfd; padding: 15px; border-radius: 10px; border: 1px dashed #ddd; }
 .root-setup input { width: 80px; padding: 8px 12px; border: 1px solid #eee; border-radius: 6px; }

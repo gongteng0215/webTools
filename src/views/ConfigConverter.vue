@@ -3,6 +3,7 @@ import { ref, watch, onMounted } from 'vue'
 import * as yaml from 'js-yaml'
 import * as dotProp from 'dot-properties'
 import { useI18n } from 'vue-i18n'
+import { showToast } from '../utils/toast'
 
 const { t } = useI18n()
 
@@ -102,6 +103,7 @@ const clearInput = () => {
 const copyOutput = () => {
   if (!output.value) return
   navigator.clipboard.writeText(output.value)
+  showToast(t('common.copied'))
 }
 
 watch([input, sourceFormat, targetFormat], convert)
@@ -177,7 +179,7 @@ onMounted(convert)
 
 <style scoped>
 .tool-container { width: 100%; max-width: 1100px; margin: 0 auto; }
-.btn-back { text-decoration: none; color: #05c46b; font-weight: bold; margin-bottom: 20px; display: inline-block; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; margin-bottom: 20px; display: inline-block; }
 
 .tool-card { background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px; }
 
@@ -194,28 +196,28 @@ onMounted(convert)
 }
 
 .select-wrapper { display: flex; align-items: center; gap: 10px; }
-.select-wrapper label { font-size: 0.9rem; color: #636e72; font-weight: 700; white-space: nowrap; }
+.select-wrapper label { font-size: 0.9rem; color: var(--text-muted); font-weight: 700; white-space: nowrap; }
 
 .select-box { position: relative; }
 .select-box select { 
   appearance: none; -webkit-appearance: none;
   padding: 8px 35px 8px 15px; 
-  border: 1px solid #dfe6e9; border-radius: 20px; 
+  border: 1px solid var(--primary-border); border-radius: 20px; 
   background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23636e72' d='M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.762L10.825 4z'/%3E%3C/svg%3E") no-repeat right 10px center;
   font-size: 0.9rem; color: #2d3436; font-weight: 600; cursor: pointer; outline: none;
   min-width: 120px; transition: all 0.2s;
 }
-.select-box select:hover { border-color: #05c46b; }
-.select-box select:focus { border-color: #05c46b; box-shadow: 0 0 0 3px rgba(5, 196, 107, 0.1); }
+.select-box select:hover { border-color: var(--primary); }
+.select-box select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.1); }
 
 .btn-swap { 
-  width: 40px; height: 40px; border-radius: 50%; border: 1px solid #dfe6e9;
-  background: white; color: #05c46b; cursor: pointer;
+  width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--primary-border);
+  background: white; color: var(--primary); cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   transition: all 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 .btn-swap:hover { 
-  background: #05c46b; color: white; border-color: #05c46b;
+  background: var(--primary); color: white; border-color: var(--primary);
   transform: rotate(180deg); 
 }
 .btn-swap svg { width: 20px; height: 20px; }
@@ -230,7 +232,7 @@ textarea {
   font-family: 'Fira Code', 'Monaco', monospace; font-size: 0.9rem; 
   background: #fafafa; resize: none; overflow-y: auto; outline: none; line-height: 1.6;
 }
-textarea:focus { border-color: #05c46b; background: #fff; }
+textarea:focus { border-color: var(--primary); background: #fff; }
 textarea[readonly] { background: #fdfdfd; cursor: default; }
 
 .error-msg { 
@@ -241,11 +243,11 @@ textarea[readonly] { background: #fdfdfd; cursor: default; }
 }
 
 .btn-copy-inline { 
-  background: #05c46b; color: white; border: none; padding: 4px 12px; 
+  background: var(--primary); color: white; border: none; padding: 4px 12px; 
   border-radius: 4px; font-size: 0.75rem; cursor: pointer; font-weight: bold;
 }
 .btn-sub { 
-  background: #f1f2f6; border: 1px solid #ddd; padding: 6px 15px; 
-  border-radius: 6px; cursor: pointer; font-size: 0.85rem; color: #636e72;
+  background: var(--primary-soft); border: 1px solid var(--primary-border); padding: 6px 15px; 
+  border-radius: 6px; cursor: pointer; font-size: 0.85rem; color: var(--primary);
 }
 </style>
