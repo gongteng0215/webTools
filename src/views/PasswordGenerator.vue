@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { showToast } from '../utils/toast'
 
 const { t } = useI18n()
 
@@ -62,6 +63,7 @@ const copiedId = ref(null)
 const copyToClipboard = (text, id) => {
   navigator.clipboard.writeText(text).then(() => {
     copiedId.value = id
+    showToast(t('common.copied'))
     setTimeout(() => {
       if (copiedId.value === id) copiedId.value = null
     }, 2000)
@@ -175,7 +177,7 @@ label {
 
 .btn-back {
   text-decoration: none;
-  color: #7c4dff;
+  color: var(--primary);
   font-weight: bold;
   font-size: 1rem;
   transition: opacity 0.2s;

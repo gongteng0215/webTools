@@ -3,6 +3,7 @@ import { ref, onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { marked } from 'marked'
 import 'github-markdown-css/github-markdown.css'
+import { showToast } from '../utils/toast'
 
 const { t } = useI18n()
 
@@ -21,7 +22,7 @@ const clear = () => {
 
 const copyHtml = () => {
   navigator.clipboard.writeText(previewHtml.value)
-  alert(t('common.copied'))
+  showToast(t('common.copied'))
 }
 </script>
 
@@ -62,7 +63,7 @@ const copyHtml = () => {
 <style scoped>
 .view-container { width: 100%; max-width: 1200px; margin: 0 auto; }
 .back-nav { margin-bottom: 20px; }
-.btn-back { text-decoration: none; color: #7c4dff; font-weight: bold; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; }
 
 .md-card { 
   background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
@@ -97,8 +98,8 @@ textarea {
 
 .actions { display: flex; gap: 10px; }
 .btn-sub { 
-  background: #f1f2f6; border: 1px solid #ddd; padding: 6px 15px; 
-  border-radius: 6px; cursor: pointer; font-size: 0.85rem; color: #636e72;
+  background: var(--primary-soft); border: 1px solid var(--primary-border); padding: 6px 15px; 
+  border-radius: 6px; cursor: pointer; font-size: 0.85rem; color: var(--primary);
 }
-.btn-sub:hover { background: #7c4dff; color: white; border-color: #7c4dff; }
+.btn-sub:hover { background: var(--primary); color: white; border-color: var(--primary); }
 </style>

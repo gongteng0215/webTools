@@ -1,6 +1,7 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { showToast } from '../utils/toast'
 
 const { t } = useI18n()
 
@@ -43,7 +44,7 @@ const convertToHSL = (r, g, b) => {
 
 const copyToClipboard = (text) => {
   navigator.clipboard.writeText(text)
-  alert(t('common.copied') + ': ' + text)
+  showToast(`${t('common.copied')}: ${text}`)
 }
 
 const commonColors = [
@@ -166,7 +167,7 @@ watch(hex, () => {
 <style scoped>
 .tool-container { width: 100%; max-width: 1000px; margin: 0 auto; }
 .back-nav { margin-bottom: 20px; }
-.btn-back { text-decoration: none; color: #a29bfe; font-weight: bold; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; }
 
 .tool-card {
   background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px;
@@ -204,8 +205,8 @@ watch(hex, () => {
 .inputs-section { display: flex; flex-direction: column; gap: 15px; }
 .input-group { display: flex; gap: 10px; }
 .input-group input { flex: 1; padding: 10px 12px; border: 1px solid #eee; border-radius: 6px; font-family: 'Fira Code', monospace; font-size: 0.95rem; background: #fafafa; outline: none; }
-.input-group button { background: #f1f2f6; border: 1px solid #ddd; padding: 0 15px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; color: #636e72; }
-.input-group button:hover { background: #eee; }
+.input-group button { background: var(--primary-soft); border: 1px solid var(--primary-border); padding: 0 15px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; color: var(--primary); }
+.input-group button:hover { background: var(--primary); color: white; }
 
 .shades-list { display: flex; height: 40px; border-radius: 6px; overflow: hidden; border: 1px solid #eee; }
 .shade-item { flex: 1; cursor: pointer; transition: flex-grow 0.2s; }

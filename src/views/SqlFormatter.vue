@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue'
 import { format } from 'sql-formatter'
 import { useI18n } from 'vue-i18n'
+import { showToast } from '../utils/toast'
 
 const { t } = useI18n()
 
@@ -34,7 +35,7 @@ const formatSql = () => {
 
 const copySql = () => {
   navigator.clipboard.writeText(sqlOutput.value)
-  alert(t('common.copied'))
+  showToast(t('common.copied'))
 }
 
 watch([sqlInput, dialect, isUppercase, indent], formatSql, { immediate: true })
@@ -101,7 +102,7 @@ watch([sqlInput, dialect, isUppercase, indent], formatSql, { immediate: true })
 
 <style scoped>
 .tool-container { width: 100%; max-width: 1000px; margin: 0 auto; }
-.btn-back { text-decoration: none; color: #ff9f43; font-weight: bold; margin-bottom: 20px; display: inline-block; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; margin-bottom: 20px; display: inline-block; }
 
 .tool-card { background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px; }
 .title { font-size: 1.5rem; margin: 0 0 25px; color: #2d3436; }
@@ -122,8 +123,8 @@ textarea { flex: 1; border: 1px solid #eee; border-radius: 8px; padding: 15px; f
 textarea[readonly] { background: #fdfdfd; }
 textarea:focus { border-color: #ff9f43; background: white; }
 
-.btn-clear-small { background: none; border: 1px solid #eee; color: #b2bec3; font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; cursor: pointer; }
-.btn-copy-inline { background: #ff9f43; color: white; border: none; padding: 4px 15px; border-radius: 4px; font-size: 0.75rem; cursor: pointer; }
+.btn-clear-small { background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary); font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; cursor: pointer; }
+.btn-copy-inline { background: var(--primary); color: white; border: none; padding: 4px 15px; border-radius: 4px; font-size: 0.75rem; cursor: pointer; }
 
 .error-msg { position: absolute; bottom: 15px; left: 15px; right: 15px; background: #fff5f5; color: #d63031; padding: 10px 15px; border-radius: 6px; font-size: 0.8rem; border-left: 4px solid #d63031; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
 </style>

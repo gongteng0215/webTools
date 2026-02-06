@@ -110,7 +110,7 @@ onUnmounted(() => {
 <style scoped>
 .tool-container { width: 100%; max-width: 900px; margin: 0 auto; }
 .back-nav { margin-bottom: 20px; }
-.btn-back { text-decoration: none; color: #6c5ce7; font-weight: bold; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; }
 
 .tool-card {
   background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px;
@@ -132,8 +132,8 @@ onUnmounted(() => {
 .input-group input { flex: 1; padding: 10px 15px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; }
 .input-group select { padding: 0 10px; border: 1px solid #ddd; border-radius: 6px; background: white; cursor: pointer; }
 
-.btn-action { background: #6c5ce7; color: white; border: none; padding: 10px 25px; border-radius: 6px; cursor: pointer; font-weight: bold; }
-.btn-sub { background: #f1f2f6; color: #2d3436; border: 1px solid #ddd; padding: 10px 15px; border-radius: 6px; cursor: pointer; }
+.btn-action { background: var(--primary); color: white; border: none; padding: 10px 25px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+.btn-sub { background: var(--primary-soft); color: var(--primary); border: 1px solid var(--primary-border); padding: 10px 15px; border-radius: 6px; cursor: pointer; }
 
 .result-area { display: flex; align-items: center; gap: 15px; background: #fafafa; padding: 15px; border-radius: 8px; }
 .result-area label { font-size: 0.9rem; color: #b2bec3; min-width: 140px; text-transform: uppercase; font-weight: bold; }

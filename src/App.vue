@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { toastMessage, toastVisible } from './utils/toast'
 
 const { locale } = useI18n()
 
@@ -31,6 +32,9 @@ watch(locale, (newVal) => {
         <option value="zh">中文 (简体)</option>
       </select>
     </div>
+    <transition name="toast-fade">
+      <div v-if="toastVisible" class="toast">{{ toastMessage }}</div>
+    </transition>
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
         <component :is="Component" />

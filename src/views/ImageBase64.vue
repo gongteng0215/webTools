@@ -1,6 +1,7 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { showToast } from '../utils/toast'
 
 const { t } = useI18n()
 
@@ -55,7 +56,7 @@ const handleBase64Input = () => {
 const copyBase64 = () => {
   if (!base64Str.value) return
   navigator.clipboard.writeText(base64Str.value)
-  alert(t('common.copied'))
+  showToast(t('common.copied'))
 }
 
 const downloadImage = () => {
@@ -139,7 +140,7 @@ watch(base64Str, (newVal) => {
 
 <style scoped>
 .tool-container { width: 100%; max-width: 900px; margin: 0 auto; }
-.btn-back { text-decoration: none; color: #0984e3; font-weight: bold; margin-bottom: 20px; display: inline-block; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; margin-bottom: 20px; display: inline-block; }
 
 .tool-card { background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px; }
 .title { font-size: 1.5rem; margin: 0 0 25px; color: #2d3436; }
@@ -161,8 +162,8 @@ watch(base64Str, (newVal) => {
 .file-info { display: flex; flex-direction: column; gap: 10px; align-items: center; font-size: 0.9rem; color: #636e72; width: 100%; }
 .action-btns { display: flex; gap: 10px; }
 
-.btn-download { background: #00b894; color: white; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: bold; }
-.btn-clear { background: #ff7675; color: white; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; }
+.btn-download { background: var(--primary); color: white; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+.btn-clear { background: var(--primary-soft); color: var(--primary); border: 1px solid var(--primary-border); padding: 6px 15px; border-radius: 6px; cursor: pointer; }
 
 .output-section .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
 .output-section h3 { font-size: 0.8rem; color: #b2bec3; margin: 0; text-transform: uppercase; font-weight: bold; }
@@ -171,6 +172,6 @@ watch(base64Str, (newVal) => {
 textarea { width: 100%; height: 250px; border: 1px solid #eee; border-radius: 8px; padding: 15px; font-family: 'Fira Code', monospace; font-size: 0.8rem; background: #fafafa; resize: none; overflow-y: auto; word-break: break-all; outline: none; transition: border-color 0.2s; }
 textarea:focus { border-color: #0984e3; background: #fff; }
 
-.btn-copy.small { background: #0984e3; color: white; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; }
-.btn-sub.small { background: #f1f2f6; border: 1px solid #ddd; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; color: #636e72; }
+.btn-copy.small { background: var(--primary); color: white; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; }
+.btn-sub.small { background: var(--primary-soft); border: 1px solid var(--primary-border); padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; color: var(--primary); }
 </style>

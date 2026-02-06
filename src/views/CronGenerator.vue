@@ -3,6 +3,7 @@ import { ref, watch, onMounted } from 'vue'
 import cronstrue from 'cronstrue/i18n'
 import dayjs from 'dayjs'
 import { useI18n } from 'vue-i18n'
+import { showToast } from '../utils/toast'
 
 const { t, locale } = useI18n()
 
@@ -175,6 +176,7 @@ const generateRandom = () => {
 
 const copyToClipboard = () => {
   navigator.clipboard.writeText(cronInput.value)
+  showToast(t('common.copied'))
 }
 
 watch([cronInput, locale], parseCron)
@@ -273,7 +275,7 @@ onMounted(executeParse)
   margin: 0 auto 40px;
 }
 .btn-back {
-  color: #7c4dff;
+  color: var(--primary);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 700;
@@ -298,13 +300,13 @@ onMounted(executeParse)
 .logo-text {
   font-size: 4rem;
   font-weight: 700;
-  color: #7c4dff;
+  color: var(--primary);
   margin: 0;
   letter-spacing: -2px;
   text-shadow: 0 0 10px rgba(124, 77, 255, 0.2);
 }
 .subtitle {
-  color: #636e72;
+  color: var(--text-muted);
   font-size: 1.1rem;
   margin-top: 10px;
 }
@@ -325,7 +327,7 @@ onMounted(executeParse)
   line-height: 1.2;
 }
 .next-text {
-  color: #636e72;
+  color: var(--text-muted);
   font-size: 1rem;
   font-family: monospace;
 }
@@ -349,7 +351,7 @@ onMounted(executeParse)
   position: absolute;
   right: 20px;
   top: -30px;
-  background: #7c4dff;
+  background: var(--primary);
   color: #fff;
   padding: 5px 15px;
   font-size: 0.9rem;
@@ -359,7 +361,7 @@ onMounted(executeParse)
 }
 .input-box {
   background: #f8f9fb;
-  border: 2px solid #dfe6e9;
+  border: 2px solid var(--primary-border);
   border-radius: 12px;
   padding: 15px 25px;
   display: flex;
@@ -378,7 +380,7 @@ onMounted(executeParse)
   letter-spacing: 5px;
 }
 .btn-copy {
-  background: #7c4dff;
+  background: var(--primary);
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
@@ -388,7 +390,7 @@ onMounted(executeParse)
   transition: all 0.2s;
 }
 .btn-copy:hover {
-  background: #6c3df0;
+  background: var(--primary-hover);
 }
 
 .labels-grid {
@@ -396,7 +398,7 @@ onMounted(executeParse)
   grid-template-columns: repeat(5, 1fr);
   max-width: 600px;
   margin: 0 auto 80px;
-  color: #636e72;
+  color: var(--text-muted);
   font-size: 1.1rem;
 }
 .label-item {
@@ -405,7 +407,7 @@ onMounted(executeParse)
   transition: color 0.2s;
 }
 .label-item:hover {
-  color: #7c4dff;
+  color: var(--primary);
 }
 
 .syntax-table {
@@ -413,7 +415,7 @@ onMounted(executeParse)
   max-width: 450px;
   margin: 0 auto;
   border-collapse: collapse;
-  color: #636e72;
+  color: var(--text-muted);
   font-family: monospace;
 }
 .syntax-table td {

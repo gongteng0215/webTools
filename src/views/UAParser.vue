@@ -82,7 +82,7 @@ onMounted(() => {
 <style scoped>
 .view-container { width: 100%; max-width: 900px; margin: 0 auto; }
 .back-nav { margin-bottom: 20px; }
-.btn-back { text-decoration: none; color: #7c4dff; font-weight: bold; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; }
 
 .card { background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px; }
 .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
@@ -98,7 +98,7 @@ textarea {
   font-family: 'Fira Code', monospace; font-size: 0.95rem; background: #fafafa; 
   resize: none; outline: none; line-height: 1.6;
 }
-textarea:focus { border-color: #7c4dff; background: white; }
+textarea:focus { border-color: var(--primary); background: white; }
 
 .results-grid { 
   display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; 
@@ -111,8 +111,8 @@ textarea:focus { border-color: #7c4dff; background: white; }
 
 .actions { display: flex; gap: 10px; }
 .btn-sub { 
-  background: #f1f2f6; border: 1px solid #ddd; padding: 6px 15px; 
-  border-radius: 6px; cursor: pointer; font-size: 0.85rem; color: #636e72;
+  background: var(--primary-soft); border: 1px solid var(--primary-border); padding: 6px 15px; 
+  border-radius: 6px; cursor: pointer; font-size: 0.85rem; color: var(--primary);
 }
-.btn-sub:hover { background: #7c4dff; color: white; border-color: #7c4dff; }
+.btn-sub:hover { background: var(--primary); color: white; border-color: var(--primary); }
 </style>

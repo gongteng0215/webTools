@@ -2,6 +2,7 @@
 import { ref, watch, onMounted } from 'vue'
 import * as jose from 'jose'
 import { useI18n } from 'vue-i18n'
+import { showToast } from '../utils/toast'
 
 const { t } = useI18n()
 
@@ -131,7 +132,7 @@ const clearAll = () => {
 const copyToken = () => {
   if (encodedToken.value) {
     navigator.clipboard.writeText(encodedToken.value)
-    alert(t('common.copied'))
+    showToast(t('common.copied'))
   }
 }
 
@@ -219,18 +220,18 @@ onMounted(() => {
 <style scoped>
 .view-container { width: 100%; max-width: 1200px; height: 85vh; display: flex; flex-direction: column; margin: 0 auto; }
 .back-nav { margin-bottom: 20px; }
-.btn-back { text-decoration: none; color: #3498db; font-weight: bold; }
+.btn-back { text-decoration: none; color: var(--primary); font-weight: bold; }
 .jwt-card { background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); flex: 1; display: flex; flex-direction: column; overflow: hidden; border: 1px solid #eee; }
 .jwt-header { padding: 15px 25px; background: #f8f9fa; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
 .title { font-size: 1.25rem; margin: 0; color: #2d3436; }
 .mode-tabs { display: flex; background: #eee; border-radius: 8px; padding: 4px; }
-.mode-tabs button { border: none; background: transparent; padding: 6px 15px; cursor: pointer; border-radius: 6px; font-size: 0.85rem; color: #636e72; transition: all 0.2s; }
-.mode-tabs button.active { background: white; color: #3498db; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.mode-tabs button { border: none; background: transparent; padding: 6px 15px; cursor: pointer; border-radius: 6px; font-size: 0.85rem; color: var(--text-muted); transition: all 0.2s; }
+.mode-tabs button.active { background: white; color: var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
 .toolbar { display: flex; gap: 10px; align-items: center; }
-.select-algo { padding: 8px 12px; border-radius: 6px; border: 1px solid #ddd; background: white; font-size: 0.9rem; }
+.select-algo { padding: 8px 12px; border-radius: 6px; border: 1px solid var(--primary-border); background: white; font-size: 0.9rem; }
 .jwe-algos { display: flex; gap: 5px; }
-.btn-primary { background: #3498db !important; color: white !important; border-color: #3498db !important; }
-.btn-clear { background: white; border: 1px solid #ddd; padding: 8px 15px; border-radius: 6px; cursor: pointer; color: #666; }
+.btn-primary { background: var(--primary) !important; color: white !important; border-color: var(--primary) !important; }
+.btn-clear { background: var(--primary-soft); border: 1px solid var(--primary-border); padding: 8px 15px; border-radius: 6px; cursor: pointer; color: var(--primary); }
 
 .debugger-layout { flex: 1; display: flex; overflow: hidden; }
 .pane { flex: 1; display: flex; flex-direction: column; }
