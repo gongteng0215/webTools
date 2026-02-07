@@ -11,9 +11,14 @@ An integrated, minimalist, high-density online toolbox for modern developers, bu
 ![Main Dashboard](./screenshots/dashboard_main.png)
 *Modern minimalist dashboard with 16 utilities.*
 
-![Crypto Tool](./screenshots/crypto_tool.png)
-![Regex Tester](./screenshots/regex_tester.png)
-*Interactive and real-time response interface.*
+![Password Generator](./screenshots/password_generator.png)
+![Cron Generator](./screenshots/cron_generator.png)
+![JSON & CSV Lab](./screenshots/json_csv_lab.png)
+![Crypto Tools](./screenshots/crypto_tools.png)
+![JWT Debugger](./screenshots/jwt_debugger.png)
+![Timestamp Converter](./screenshots/timestamp_converter.png)
+![Regex Tester](./screenshots/regex_tester_card.png)
+*Feature snapshots from seven tools.*
 
 ## 🚀 Core Features
 
